@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MokeSell</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f5f5f5;
+    }
+
+    header {
+      background-color: #fff;
+      padding: 10px 20px;
+      border-bottom: 1px solid #ddd;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      font-size: 1.5rem;
+    }
+
+    nav {
+      background-color: #fff;
+      padding: 10px;
+      display: flex;
+      justify-content: space-around;
+      border-bottom: 1px solid #ddd;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #555;
+      font-size: 1rem;
+      font-weight: bold;
+    }
+
+    nav a.active {
+      color: #000;
+      text-decoration: underline;
+    }
+
+    .section {
+      display: none;
+    }
+
+    .section.active {
+      display: block;
+    }
+
+    .form-container {
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      width: 90%;
+      max-width: 400px;
+      margin: 20px auto;
+    }
+
+    .form-container input, .form-container button {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+
+    .form-container button {
+      background-color: #555;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px 10px;
+      background: #eaeaea;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>MokeSell</h1>
+  </header>
+  <nav>
+    <a href="#" id="main-tab" class="active">Main</a>
+    <a href="#" id="login-tab">Log in</a>
+    <a href="#" id="register-tab">Register</a>
+  </nav>
+
+  <main id="main-page" class="section active">
+    <h2>Welcome to MokeSell</h2>
+    <div id="main-content">
+      <p>Loading trending items...</p>
+    </div>
+  </main>
+
+  <main id="login-page" class="section">
+    <div class="form-container">
+      <h2>Log in</h2>
+      <input type="text" id="login-username" placeholder="Phone number/ Email/ Username">
+      <input type="password" id="login-password" placeholder="Password">
+      <button onclick="handleLogin()">Log in</button>
+    </div>
+  </main>
+
+  <main id="register-page" class="section">
+    <div class="form-container">
+      <h2>Register</h2>
+      <input type="text" id="register-name" placeholder="Full Name">
+      <input type="email" id="register-email" placeholder="Email">
+      <input type="text" id="register-username" placeholder="Username">
+      <input type="password" id="register-password" placeholder="Password">
+      <button onclick="handleRegister()">Register</button>
+    </div>
+  </main>
+
+  <footer>
+    <p>Sell on MokeSell | Log in | Register | About us | Help</p>
+  </footer>
+
+  <script>
+    const API_URL = "https://example.com/api";
+
+    const mainTab = document.getElementById('main-tab');
+    const loginTab = document.getElementById('login-tab');
+    const registerTab = document.getElementById('register-tab');
+
+    const mainPage = document.getElementById('main-page');
+    const loginPage = document.getElementById('login-page');
+    const registerPage = document.getElementById('register-page');
+
+    mainTab.addEventListener('click', () => switchSection(mainPage, mainTab));
+    loginTab.addEventListener('click', () => switchSection(loginPage, loginTab));
+    registerTab.addEventListener('click', () => switchSection(registerPage, registerTab));
+
+    function switchSection(section, tab) {
+      document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+      document.querySelectorAll('nav a').forEach(t => t.classList.remove('active'));
+      section.classList.add('active');
+      tab.classList.add('active');
+    }
+
+    async function fetchMainPageContent() {
+      try {
+        const response = await fetch(`${API_URL}/main`);
+        const data = await response.json();
+        const mainContent = document.getElementById('main-content');
+        mainContent.innerHTML = data.items.map(item => `<p>${item.name} - ${item.price}</p>`).join('');
+      } catch (error) {
+        console.error("Failed to fetch main page content:", error);
+      }
+    }
+
+    fetchMainPageContent();
+
+    async function handleLogin() {
+      const username = document.getElementById('login-username').value;
+      const password = document.getElementById('login-password').value;
+
+      try {
+        const response = await fetch(`${API_URL}/login`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ username, password }),
+        });
+        const data = await response.json();
+
+        if (data.success) {
+          alert("Login successful!");
+          switchSection(mainPage, mainTab);
+        } else {
+          alert("Login failed: " + data.message);
+        }
+      } catch (error) {
+        console.error("Login error:", error);
+        alert("An error occurred while logging in.");
+      }
+    }
+
+    async function handleRegister() {
+      const name = document.getElementById('register-name').value;
+      const email = document.getElementById('register-email').value;
+      const username = document.getElementById('register-username').value;
+      const password = document.getElementById('register-password').value;
+
+      try {
+        const response = await fetch(`${API_URL}/register`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ name, email, username, password }),
+        });
+        const data = await response.json();
+
+        if (data.success) {
+          alert("Registration successful!");
+          switchSection(loginPage, loginTab);
+        } else {
+          alert("Registration failed: " + data.message);
+        }
+      } catch (error) {
+        console.error("Registration error:", error);
+        alert("An error occurred while registering.");
+      }
+    }
+  </script>
+</body>
+</html>
