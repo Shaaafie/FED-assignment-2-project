@@ -56,7 +56,7 @@
 
   nav {
     display: flex;
-    justify-content: space-around; /* Adjusts spacing */
+    justify-content:right; /* Adjusts spacing */
     align-items: end;
     background-color: #fff;
     padding: 10px;
@@ -67,14 +67,12 @@
   nav a {
     text-decoration: none;
     color: #555;
-    font-size: 1rem;
+    font-size: x-small;
     font-weight: bold;
-    margin: 0 15px; /* Adds spacing between links */
   }
 
   nav a.active {
     color: #000;
-    text-decoration: underline;
   }
 
   .section {
@@ -83,6 +81,11 @@
 
   .section.active {
     display: block;
+  }
+
+  .language {
+    border: #fff;
+    font-size: x-small;
   }
 
   .form-container {
