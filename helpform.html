@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>MokeSell</title>
+</head>
+<body>
+  <body>
+    <!-- Notification bar -->
+    <div class="notification-bar" id="notificationBar">
+        <span>🔥 Limited Time Sale! Get 20% off on all products! Use code: SALE20</span>
+        <button class="close-btn" onclick="closeNotification()">&times;</button>
+    </div>
+  <header>
+    <a class="help-button" href="helpform.html">Help</a>
+    <nav>
+      <a href="#" id="notifs-tab" class="active">Notifications</a>
+      <select id="languageSwitcher" onchange="changeLanguage()">
+        <option value="en">English</option>
+        <option value="es">中文</option>
+        <option value="es">French</option>
+        <option value="fr">한국어</option>
+      </select>
+      <a href="#" id="register-tab">Register</a>
+      <a href="login.html">Log in</a>
+    </nav>
+  </header>
+
+  <header>
+    <h1 href="homepage.html">MokeSell</h1>
+  <div class = "categories">
+    <a href="fashion" class="category">Fashion</a>
+    <a href="cameras" class="category">Digital Cameras</a>
+    <button>Fashion</button>
+  </div>
+  </header>
+
+<!-- Help Form Container -->
+<div class="form-container" id="helpFormContainer">
+    <h2>Customer Help Form</h2>
+    <form id="helpForm" onsubmit="return handleFormSubmit(event)">
+      
+      <!-- Name Field -->
+      <label for="name">Your Name</label>
+      <input type="text" id="name" name="name" required>
+      <div id="nameError" class="error"></div>
+
+      <!-- Email Field -->
+      <label for="email">Your Email</label>
+      <input type="email" id="email" name="email" required>
+      <div id="emailError" class="error"></div>
+
+      <!-- Issue Category -->
+      <label for="category">Issue Category</label>
+      <select id="category" name="category">
+        <option value="technical">Technical Issue</option>
+        <option value="billing">Billing Inquiry</option>
+        <option value="account">Account Issue</option>
+        <option value="general">General Inquiry</option>
+      </select>
+
+      <!-- Issue Description -->
+      <label for="description">Describe Your Issue</label>
+      <textarea id="description" name="description" required></textarea>
+      <div id="descriptionError" class="error"></div>
+
+      <!-- Submit Button -->
+      <button type="submit" class="submit-btn">Submit</button>
+      <div id="formSuccess" class="success"></div>
+    </form>
