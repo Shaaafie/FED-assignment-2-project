@@ -81,31 +81,68 @@ const API_URL = "https://example.com/api";
       }
     }
 
-    async function handleRegister() {
-      const name = document.getElementById('register-name').value;
-      const email = document.getElementById('register-email').value;
-      const username = document.getElementById('register-username').value;
-      const password = document.getElementById('register-password').value;
+    function closeNotification() {
+      // Hide the notification bar when the close button is clicked
+      document.getElementById("notificationBar").style.display = "none";
+  }
+  
+  function closeNotification() {
+    // Hide the notification bar when the close button is clicked
+    document.getElementById("notificationBar").style.display = "none";
+}
 
-      try {
-        const response = await fetch(`${API_URL}/register`, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ name, email, username, password }),
+// Registration feature
+async function handleRegister() {
+    // Get the values from the input fields
+    const name = document.getElementById('register-name').value;
+    const email = document.getElementById('register-email').value;
+    const username = document.getElementById('register-username').value;
+    const password = document.getElementById('register-password').value;
+
+    // Simple form validation
+    if (!name || !email || !username || !password) {
+        alert("All fields are required!");
+        return;
+    }
+
+    // Prepare the data to send to the API
+    const registrationData = {
+        name: name,
+        email: email,
+        username: username,
+        password: password
+    };
+
+    try {
+        // Send the data to the API using Fetch API (POST request)
+        const response = await fetch('https://yourapi.com/register', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(registrationData)
         });
+
+        // Parse the response as JSON
         const data = await response.json();
 
-        if (data.success) {
-          alert("Registration successful!");
-          switchSection(loginPage, loginTab);
+        // Handle the response based on success or failure
+        if (response.ok) {
+            // If registration was successful
+            alert("Registration successful! Welcome, " + name);
+            // Optionally, redirect to login or homepage
+            window.location.href = 'login.html'; // Change this to where you want to redirect
         } else {
-          alert("Registration failed: " + data.message);
+            // If registration failed
+            alert("Error: " + data.message || "Something went wrong, please try again.");
         }
-      } catch (error) {
-        console.error("Registration error:", error);
-        alert("An error occurred while registering.");
-      }
+    } catch (error) {
+        // Handle any errors during the fetch request (e.g., network issues)
+        console.error('Error:', error);
+        alert("An error occurred. Please try again later.");
     }
+}
+     
 
     function toggleHelpForm() {
       const formContainer = document.getElementById("helpFormContainer");
