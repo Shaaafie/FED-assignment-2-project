@@ -83,6 +83,13 @@
     font-weight: bold;
   }
 
+  .login-home {
+    text-decoration: none;
+    color: #000000;
+    font-size: x-small;
+    font-weight: bold;
+  }
+
   nav a.active {
     color: #000;
   }
@@ -133,7 +140,7 @@
     color: #fff;
     border: none;
     cursor: pointer;
-  }
+    helllooo  }
 
 .trending .allitems.item{
   width:300px;
