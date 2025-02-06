@@ -1,56 +1,63 @@
-// API Base URL
-const API_URL = "https://mokesell-bfee.restdb.io/rest/users?max=2";
-const API_KEY = 'fbd56aaf5bf9edab375e6965cfc3bdc50fc21';
+document.addEventListener("DOMContentLoaded", function () {
+  const APIKEY = "fbd56aaf5bf9edab375e6965cfc3bdc50fc21"; 
+  const API_URL = "https://mokesell-bfee.restdb.io/rest/users"; 
 
-// Registration function
-async function handleRegister() {
-  // Get the values from the input fields
-  const firstName = document.getElementById('register-first-name').value;
-  const lastName = document.getElementById('register-last-name').value;
-  const email = document.getElementById('register-email').value;
-  const phone = document.getElementById('register-phone').value;
-  const address = document.getElementById('register-address').value;
-  const password = document.getElementById('register-password').value;
+  document.getElementById("register-btn").addEventListener("click", function (e) {
+    e.preventDefault();
 
-  // Simple form validation
-  if (!firstName || !lastName || !email || !phone || !address || !password) {
-    alert("All fields are required!");
-    return;
-  }
+    // Retrieve form values
+    let firstName = document.getElementById("register-first-name").value.trim();
+    let lastName = document.getElementById("register-last-name").value.trim();
+    let email = document.getElementById("register-email").value.trim();
+    let phone = document.getElementById("register-phone").value.trim();
+    let address = document.getElementById("register-address").value.trim();
+    let password = document.getElementById("register-password").value.trim();
 
-  const registrationData = {
-    firstName: firstName,
-    lastName: lastName,
-    email: email,
-    phone: phone,
-    address: address,
-    password: password
-  };
-
-  try {
-    const response = await fetch(API_URL, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'x-apikey': API_KEY  // Your API key here
-      },
-      body: JSON.stringify(registrationData)
-    });
-
-    const data = await response.json();
-
-    if (response.ok) {
-      alert("Registration successful! Welcome, " + firstName);
-      window.location.href = 'login.html'; // Redirect after success
-    } else {
-      alert("Error: " + data.message || "Something went wrong, please try again.");
+    // Validate input fields
+    if (!firstName || !lastName || !email || !phone || !address || !password) {
+      alert("All fields are required!");
+      return;
     }
-  } catch (error) {
-    console.error('Error:', error);
-    alert("An error occurred. Please try again later.");
-  }
-}
 
+    // Create user data object
+    let userData = {
+      firstName: firstName,
+      lastName: lastName,
+      email: email,
+      phone: phone,
+      address: address,
+      password: password
+    };
+
+    // AJAX settings for RestDB POST request
+    let settings = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "x-apikey": APIKEY,
+        "Cache-Control": "no-cache"
+      },
+      body: JSON.stringify(userData)
+    };
+
+    // Send request to RestDB
+    fetch(API_URL, settings)
+      .then(response => response.json())
+      .then(data => {
+        console.log("Success:", data);
+
+        // Show success message
+        alert("Registration successful! Redirecting to login page.");
+
+        // Redirect to login page after successful registration
+        window.location.href = "login.html";
+      })
+      .catch(error => {
+        console.error("Error:", error);
+        alert("An error occurred while registering. Please try again.");
+      });
+  });
+});
 
 // Language Change Function
 function changeLanguage() {
