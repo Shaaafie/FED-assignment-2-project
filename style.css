@@ -78,7 +78,7 @@
 
   nav a {
     text-decoration: none;
-    color: #555;
+    color: #000000;
     font-size: x-small;
     font-weight: bold;
   }
@@ -98,6 +98,16 @@
   .language {
     border: #fff;
     font-size: x-small;
+  }
+
+  .help-button {
+    color: #000000;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: x-small;
+    font-weight: bold;
+    margin-left: 10px;
+    text-decoration: none;
   }
 
   .form-container {

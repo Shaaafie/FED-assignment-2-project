@@ -106,3 +106,52 @@ const API_URL = "https://example.com/api";
         alert("An error occurred while registering.");
       }
     }
+
+    function toggleHelpForm() {
+      const formContainer = document.getElementById("helpFormContainer");
+      // Toggle the form visibility
+      formContainer.style.display = (formContainer.style.display === "none" || formContainer.style.display === "") ? "block" : "none";
+    }
+
+    function handleFormSubmit(event) {
+      event.preventDefault(); // Prevent form submission (default behavior)
+
+      // Clear previous error messages
+      document.getElementById("nameError").textContent = '';
+      document.getElementById("emailError").textContent = '';
+      document.getElementById("descriptionError").textContent = '';
+      document.getElementById("formSuccess").textContent = '';
+
+      // Get form data
+      const name = document.getElementById("name").value;
+      const email = document.getElementById("email").value;
+      const category = document.getElementById("category").value;
+      const description = document.getElementById("description").value;
+
+      let formIsValid = true;
+
+      // Basic validation
+      if (name.trim() === "") {
+        document.getElementById("nameError").textContent = "Name is required.";
+        formIsValid = false;
+      }
+      if (email.trim() === "") {
+        document.getElementById("emailError").textContent = "Email is required.";
+        formIsValid = false;
+      }
+      if (description.trim() === "") {
+        document.getElementById("descriptionError").textContent = "Description is required.";
+        formIsValid = false;
+      }
+
+      // If validation passes, show success message
+      if (formIsValid) {
+        document.getElementById("formSuccess").textContent = "Thank you for your submission. We will get back to you shortly!";
+        
+        // Optionally, simulate form submission with data logging
+        console.log("Form Submitted", { name, email, category, description });
+        
+        // Optionally reset the form
+        document.getElementById("helpForm").reset();
+      }
+    }

@@ -16,7 +16,7 @@
     </div>
   </div>
   <header>
-    <h1>MokeSell</h1>
+    <a class="help-button" href="#" onclick="toggleHelpForm()">Help</a>
     <nav>
       <a href="#" id="notifs-tab" class="active">Notifications</a>
       <select id="languageSwitcher" onchange="changeLanguage()">
@@ -26,26 +26,20 @@
         <option value="fr">한국어</option>
       </select>
       <a href="#" id="register-tab">Register</a>
-      <a href="#" id="login-tab">Log in</a>
+      <a href="login.html">Log in</a>
     </nav>
+  </header>
+
+  <header>
+  <div class = "categories">
+    <a href="fashion" class="category">Fashion</a>
+    <a href="cameras" class="category">Digital Cameras</a>
+    <button>Fashion</button>
+  </div>
   </header>
 
   <main id="main-page" class="Trending now">
     <h2>Trending Now</h2>
-    <div class = "categories">
-      <a href="fashion" class="category">Fashion</a>
-      <a href="cameras" class="category">Digital Cameras</a>
-      <button>Fashion</button>
-    </div>
-  </main>
-
-  <main id="login-page" class="section">
-    <div class="form-container">
-      <h2>Log in</h2>
-      <input type="text" id="login-username" placeholder="Phone number/ Email/ Username">
-      <input type="password" id="login-password" placeholder="Password">
-      <button onclick="handleLogin()">Log in</button>
-    </div>
   </main>
 
   <main id="register-page" class="section">
@@ -58,6 +52,41 @@
       <button onclick="handleRegister()">Register</button>
     </div>
   </main>
+
+  <!-- Help Form Container -->
+  <div class="form-container" id="helpFormContainer">
+    <h2>Customer Help Form</h2>
+    <form id="helpForm" onsubmit="return handleFormSubmit(event)">
+      
+      <!-- Name Field -->
+      <label for="name">Your Name</label>
+      <input type="text" id="name" name="name" required>
+      <div id="nameError" class="error"></div>
+
+      <!-- Email Field -->
+      <label for="email">Your Email</label>
+      <input type="email" id="email" name="email" required>
+      <div id="emailError" class="error"></div>
+
+      <!-- Issue Category -->
+      <label for="category">Issue Category</label>
+      <select id="category" name="category">
+        <option value="technical">Technical Issue</option>
+        <option value="billing">Billing Inquiry</option>
+        <option value="account">Account Issue</option>
+        <option value="general">General Inquiry</option>
+      </select>
+
+      <!-- Issue Description -->
+      <label for="description">Describe Your Issue</label>
+      <textarea id="description" name="description" required></textarea>
+      <div id="descriptionError" class="error"></div>
+
+      <!-- Submit Button -->
+      <button type="submit" class="submit-btn">Submit</button>
+      <div id="formSuccess" class="success"></div>
+    </form>  
+
   <script src="script.js"></script>
 
   <footer>
