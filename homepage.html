@@ -5,6 +5,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MokeSell</title>
   <style>
+    .notification-bar {
+            background-color: #c8926d;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            font-size: 16px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+        .close-btn {
+            position: absolute;
+            right: 15px;
+            top: 10px;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 18px;
+            cursor: pointer;
+        }
     body {
       font-family: Arial, sans-serif;
       margin: 0;
@@ -87,6 +109,18 @@
   </style>
 </head>
 <body>
+  <body>
+    <!-- Notification bar -->
+    <div class="notification-bar" id="notificationBar">
+        <span>🔥 Limited Time Sale! Get 20% off on all products! Use code: SALE20</span>
+        <button class="close-btn" onclick="closeNotification()">&times;</button>
+    </div>
+
+    <script>
+        function closeNotification() {
+            document.getElementById("notificationBar").style.display = "none";
+        }
+    </script>
   <header>
     <h1>MokeSell</h1>
   </header>
@@ -185,7 +219,7 @@
         alert("An error occurred while logging in.");
       }
     }
-    // hello
+
     async function handleRegister() {
       const name = document.getElementById('register-name').value;
       const email = document.getElementById('register-email').value;
