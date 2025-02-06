@@ -12,6 +12,18 @@
   transition: top 0.3s ease, opacity 0.3s ease;
 }
 
+.navbar{
+  width:1200px;
+  height:75px;
+  margin:auto;
+}
+
+.icon{
+  width:200px;
+  height: 70px;
+  float:left;
+}
+
 .notification-hidden {
   top: -50px;
   opacity: 0;
