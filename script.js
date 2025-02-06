@@ -13,6 +13,19 @@ const API_URL = "https://example.com/api";
     loginTab.addEventListener('click', () => switchSection(loginPage, loginTab));
     registerTab.addEventListener('click', () => switchSection(registerPage, registerTab));
 
+    function changeLanguage() {
+      const language = document.getElementById("languageSwitcher").value;
+      const greeting = document.getElementById("greeting");
+
+      if (language === "en") {
+        greeting.innerHTML = "Hello, welcome to the website!";
+      } else if (language === "es") {
+        greeting.innerHTML = "¡Hola, bienvenido al sitio web!";
+      } else if (language === "fr") {
+        greeting.innerHTML = "Bonjour, bienvenue sur le site web!";
+      }
+    }
+
     function switchSection(section, tab) {
       document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
       document.querySelectorAll('nav a').forEach(t => t.classList.remove('active'));

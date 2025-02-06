@@ -17,7 +17,12 @@
     <h1>MokeSell</h1>
     <nav>
       <a href="#" id="notifs-tab" class="active">Notifications</a>
-      <a href="#" id="language-tab">Language</a>
+      <select id="languageSwitcher" onchange="changeLanguage()">
+        <option value="en">English</option>
+        <option value="es">中文</option>
+        <option value="es">French</option>
+        <option value="fr">한국어</option>
+      </select>
       <a href="#" id="register-tab">Register</a>
       <a href="#" id="login-tab">Log in</a>
     </nav>

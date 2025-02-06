@@ -37,12 +37,17 @@
   }
 
   header {
-    background-color: #fff;
-    padding: 10px 20px;
-    border-bottom: 1px solid #ddd;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* Logo left, nav right */
     align-items: center;
+    padding: 10px 20px;
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+  } 
+
+  nav {
+    display: flex;
+    gap: 10px; /* Adds spacing between nav items */
   }
 
   header h1 {
@@ -50,11 +55,13 @@
   }
 
   nav {
+    display: flex;
+    justify-content: space-around; /* Adjusts spacing */
+    align-items: end;
     background-color: #fff;
     padding: 10px;
-    display: flex;
-    justify-content: space-around;
     border-bottom: 1px solid #ddd;
+    width: 100%; /* Ensures full width */
   }
 
   nav a {
@@ -62,6 +69,7 @@
     color: #555;
     font-size: 1rem;
     font-weight: bold;
+    margin: 0 15px; /* Adds spacing between links */
   }
 
   nav a.active {
