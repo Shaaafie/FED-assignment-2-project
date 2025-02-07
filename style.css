@@ -44,7 +44,7 @@
 
   header {
     display: flex;
-    justify-content: space-between; /* Logo left, nav right */
+    justify-content:baseline;
     align-items: center;
     padding: 10px 20px;
     background-color: #fff;
@@ -77,8 +77,20 @@
     font-weight: bold;
   }
   .logo {
-    width: 30px;
-    height: 30px;
+    width: 70px;
+    padding-right: 10px;
+    justify-content: left;
+    text-decoration: none;
+  }
+
+  .MokeSell {
+    font-size: 35px;
+    font-family: "DM Serif Text", serif;
+    font-weight: 700;
+    font-style: normal;
+    padding-right: 0%;
+    color: #000;
+    text-decoration: none;
   }
 
   .login-home {
@@ -125,15 +137,6 @@
   .language {
     border: #fff;
     font-size: x-small;
-  }
-   
-  .logo {
-    justify-content: left;
-    width: 70px;
-  }
-
-  .MokeSell {
-    align-items: left;
   }
 
   .help-button {
@@ -186,8 +189,6 @@
 .item{
   font:Aerial;
 }
-
-
 
   footer {
     text-align: center;
