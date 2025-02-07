@@ -106,6 +106,15 @@
     border: #fff;
     font-size: x-small;
   }
+   
+  .logo {
+    justify-content: left;
+    width: 70px;
+  }
+
+  .MokeSell {
+    align-items: left;
+  }
 
   .help-button {
     color: #000000;
@@ -157,8 +166,6 @@
 .item{
   font:Aerial;
 }
-
-
 
   footer {
     text-align: center;
