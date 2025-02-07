@@ -1,5 +1,5 @@
 const APIKEY = "67a58bf59c979736731b2a71"; // Use your real API Key
-const API_URL = "https://mokesell-714e.restdb.io/rest/register";
+const API_URL = "https://mokesell-714e.restdb.io/rest/register?max=2";
 
 document.getElementById("register-btn").addEventListener("click", function (e) {
     e.preventDefault();
@@ -39,20 +39,24 @@ document.getElementById("register-btn").addEventListener("click", function (e) {
 
     // Make API call
     fetch(API_URL, settings)
-        .then(response => {
-            if (!response.ok) throw new Error("Network response was not ok");
-            return response.json();
-        })
-        .then(data => {
-            console.log("User registered:", data);
-            alert("Registration successful!");
-            document.querySelector(".form-container").reset();
-        })
-        .catch(error => {
-            console.error("Error registering user:", error);
-            alert("Registration failed. Check console for details.");
-        });
-});
+    .then(response => {
+        if (!response.ok) {
+            throw new Error("Network response was not ok");
+        }
+        return response.json();
+    })
+    .then(data => {
+        console.log("User registered:", data);
+        alert("Registration successful! Redirecting to login page...");
+        
+        // Redirect to login page
+        window.location.href = "login.html";
+    })
+    .catch(error => {
+        console.error("Error registering user:", error);
+        alert("Registration failed. Please try again.");
+    });
+  });
 
 // Language Change Function
 function changeLanguage() {
