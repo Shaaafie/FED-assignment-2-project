@@ -1,69 +1,58 @@
-document.addEventListener("DOMContentLoaded", function () {
-  const APIKEY = "bd6069aad8b652a1e3944ec03d69fa9e54b21";
-  const API_URL = "https://mokesell-bfee.restdb.io/rest/users";
+const APIKEY = "67a58bf59c979736731b2a71"; // Use your real API Key
+const API_URL = "https://mokesell-714e.restdb.io/rest/register";
 
-  // ✅ Select register button
-  const registerButton = document.getElementById("register-btn");
-  if (!registerButton) {
-    console.error("Register button not found!");
-    return;
-  }
-
-  registerButton.addEventListener("click", function (e) {
+document.getElementById("register-btn").addEventListener("click", function (e) {
     e.preventDefault();
 
-    let firstName = document.getElementById("register-first-name")?.value.trim();
-    let lastName = document.getElementById("register-last-name")?.value.trim();
-    let email = document.getElementById("register-email")?.value.trim();
-    let phone = document.getElementById("register-phone")?.value.trim();
-    let password = document.getElementById("register-password")?.value.trim();
+    // Get form values
+    let firstName = document.getElementById("register-first-name").value.trim();
+    let lastName = document.getElementById("register-last-name").value.trim();
+    let email = document.getElementById("register-email").value.trim();
+    let phone = document.getElementById("register-phone").value.trim();
+    let password = document.getElementById("register-password").value.trim();
 
+    // Validate inputs
     if (!firstName || !lastName || !email || !phone || !password) {
-      alert("All fields are required!");
-      return;
+        alert("All fields are required!");
+        return;
     }
 
-    let userData = { firstName, lastName, email, phone, password };
+    // Create JSON object
+    let jsonData = {
+        "First Name": firstName,
+        "Last Name": lastName,
+        "Email": email,
+        "Phone Number": phone,
+        "Password": password
+    };
 
-    fetch(API_URL, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "x-apikey": APIKEY,
-        "Cache-Control": "no-cache"
-      },
-      body: JSON.stringify(userData)
-    })
-      .then(response => response.json())
-      .then(data => {
-        alert("Registration successful!");
-        window.location.href = "login.html";
-      })
-      .catch(error => {
-        console.error("Error:", error);
-        alert("Failed to register. Please try again.");
-      });
-  });
+    // Fetch settings
+    let settings = {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            "x-apikey": APIKEY,  // ✅ Ensure API Key is correct
+            "Cache-Control": "no-cache"
+        },
+        body: JSON.stringify(jsonData)
+    };
+
+    // Make API call
+    fetch(API_URL, settings)
+        .then(response => {
+            if (!response.ok) throw new Error("Network response was not ok");
+            return response.json();
+        })
+        .then(data => {
+            console.log("User registered:", data);
+            alert("Registration successful!");
+            document.querySelector(".form-container").reset();
+        })
+        .catch(error => {
+            console.error("Error registering user:", error);
+            alert("Registration failed. Check console for details.");
+        });
 });
-
-async function fetchMainPageContent() {
-  try {
-    const response = await fetch(API_URL, {
-      headers: { "x-apikey": "bd6069aad8b652a1e3944ec03d69fa9e54b21" }
-    });
-    if (!response.ok) {
-      throw new Error(`HTTP error! Status: ${response.status}`);
-    }
-    const data = await response.json();
-    console.log("Fetched data:", data);
-    document.getElementById('main-content').innerHTML = 
-      data.map(item => `<p>${item.firstName} - ${item.email}</p>`).join('');
-  } catch (error) {
-    console.error("Failed to fetch main page content:", error);
-  }
-}
-
-
 
 // Language Change Function
 function changeLanguage() {
