@@ -12,12 +12,6 @@
   transition: top 0.3s ease, opacity 0.3s ease;
 }
 
-.navbar{
-  width:1200px;
-  height:75px;
-  margin:auto;
-}
-
 .icon{
   width:200px;
   height: 70px;
@@ -69,7 +63,7 @@
   nav {
     display: flex;
     justify-content:right; /* Adjusts spacing */
-    align-items: end;
+    align-items: center;
     background-color: #fff;
     padding: 10px;
     border-bottom: 1px solid #ddd;
@@ -81,6 +75,10 @@
     color: #000000;
     font-size: x-small;
     font-weight: bold;
+  }
+  .logo {
+    width: 30px;
+    height: 30px;
   }
 
   .login-home {
@@ -100,6 +98,28 @@
 
   .section.active {
     display: block;
+  }
+
+  .categories, .currency {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: white;
+    cursor: pointer;
+  }
+
+  #search-box {
+    padding: 8px;
+    border: none;
+    outline: none;
+    width: 200px;
+  }
+
+  .search-form {
+    display: flex;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden;
   }
 
   .language {
@@ -153,12 +173,7 @@
   margin:0;
   gap:20px;
   border-radius: 20px;
-}
-.item{
-  font:Aerial;
-}
-
-
+  }
 
   footer {
     text-align: center;

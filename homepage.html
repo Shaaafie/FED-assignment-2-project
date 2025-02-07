@@ -29,11 +29,23 @@
 
   <header>
     <h1 href="homepage.html">MokeSell</h1>
-  <div class = "categories">
-    <a href="fashion" class="category">Fashion</a>
-    <a href="cameras" class="category">Digital Cameras</a>
+    <img src="logo.png" alt="Mokesell Logo" class="logo">
+ 
+  <select class="categories">
+      <option value="">All Categories</option>
+      <option value="electronics">Electronics</option>
+      <option value="fashion">Fashion</option>
+      <option value="home">Home & Living</option>
+  </select>
+  <select class="currency">
+      <option value="SGD">SGD</option>
+  </select>
     <button>Fashion</button>
-  </div>
+    <button>Digital Cameras</button>
+  <form class="search-form">
+      <input type="text" placeholder="Search for items..." id="search-box">
+      <button type="submit">🔍</button>
+  </form>
   </header>
 
   <main id="main-page" class="Trending now">
@@ -70,6 +82,9 @@
     </div>
   </div>
 </main>
+
+
+
 
   <script src="script.js"></script>
 
