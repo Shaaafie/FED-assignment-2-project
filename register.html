@@ -7,31 +7,27 @@
   <title>Register</title>
 </head>
 <body>
-  <body>
-    <!-- Notification bar -->
-    <div class="notification-bar" id="notificationBar">
-        <span>🔥 Limited Time Sale! Get 20% off on all products! Use code: SALE20</span>
-        <button class="close-btn" onclick="closeNotification()">&times;</button>
-    </div>
   <header>
     <a href="homepage.html" class="login-home">
-    <h1>MokeSell</h1>
+      <h1>MokeSell</h1>
+      <p class="register-p">Register</p>
     </a>
   </header>
 
-    <div class="form-container">
-      <h2>Register</h2>
-      <input type="text" id="register-name" placeholder="Full Name">
-      <input type="email" id="register-email" placeholder="Email">
-      <input type="text" id="register-username" placeholder="Username">
-      <input type="password" id="register-password" placeholder="Password">
-      <button onclick="handleRegister()">Register</button>
-    </div>
-
-  <script src="script.js"></script>
-
+  <div class="form-container">
+    <h2>Register</h2>
+    <input type="text" id="register-first-name" placeholder="First Name">
+    <input type="text" id="register-last-name" placeholder="Last Name">
+    <input type="email" id="register-email" placeholder="Email">
+    <input type="text" id="register-phone" placeholder="Phone Number">
+    <input type="password" id="register-password" placeholder="Password">
+    <button id="register-btn">Register</button>
+  </div>
+  
   <footer>
     <p>Sell on MokeSell | Log in | Register | About us | Help</p>
   </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
