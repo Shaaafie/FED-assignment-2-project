@@ -1,6 +1,6 @@
 const APIKEY = "67a58bf59c979736731b2a71"; // Your actual API key
 const REGISTER_API = "https://mokesell-714e.restdb.io/rest/register?max=2";
-const LOGIN_API = "https://mokesell-714e.restdb.io/rest/register?max=2";
+const LOGIN_API = "https://mokesell-714e.restdb.io/rest/register";
 
 document.addEventListener("DOMContentLoaded", function () {
   const registerButton = document.getElementById("register-btn");
@@ -40,8 +40,8 @@ document.addEventListener("DOMContentLoaded", function () {
           return response.json();
       })
       .then(data => {
-          alert("Registration successful! Redirecting to login page...");
-          window.location.href = "login.html";
+          alert("Registration successful! Redirecting to homepage...");
+          window.location.href = "homepage.html";
       })
       .catch(error => {
           console.error("Error registering user:", error);
@@ -84,7 +84,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
           let user = users[0];
 
-          if (user.password !== password) { // Ensure Password matches case in DB
+          if (user["Password"] !== password) { // Ensure Password matches case in DB
               alert("Incorrect password. Please try again.");
               return;
           }
@@ -98,6 +98,104 @@ document.addEventListener("DOMContentLoaded", function () {
           alert("Login failed. Please try again.");
       });
   });
+
+  // List product
+  document.getElementById("product-form").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    // Get form values
+    let name = document.getElementById("product-name").value.trim();
+    let description = document.getElementById("product-description").value.trim();
+    let price = document.getElementById("product-price").value.trim();
+    let quality = document.getElementById("product-quality").value.trim();
+    let status = document.getElementById("product-status").value.trim();
+    let condition = document.getElementById("product-condition").value.trim();
+    let category = document.getElementById("product-category").value.trim();
+    let listerEmail = document.getElementById("product-lister-email").value.trim();
+    let image = document.getElementById("product-image").value.trim();
+    let listDate = new Date().toISOString().split("T")[0]; // Auto-generate today's date
+
+    // Validate input fields
+    if (!name || !description || !price || !quality || !status || !condition || !category || !listerEmail || !image) {
+        alert("Please fill in all fields.");
+        return;
+    }
+
+    // Create product object
+    let productData = {
+        "Name": name,
+        "Description": description,
+        "Price": price,
+        "Condition": Condition,
+        "Brand": brand,
+        "Category": category,
+        "List Date": listDate,
+        "Lister Email": listerEmail,
+        "Image": image
+    };
+
+    // Make the API call to add the product
+    fetch(PRODUCTS_API, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            "x-apikey": APIKEY,
+            "Cache-Control": "no-cache"
+        },
+        body: JSON.stringify(productData)
+    })
+    .then(response => {
+        if (!response.ok) throw new Error("Failed to add product.");
+        return response.json();
+    })
+    .then(data => {
+        alert("Product added successfully!");
+        document.getElementById("product-form").reset(); // Clear form
+    })
+    .catch(error => {
+        console.error("Error adding product:", error);
+        alert("Failed to add product. Please try again.");
+    });
+});
+
+const productListContainer = document.getElementById("product-list");
+
+// Fetch products and display them
+fetch(PRODUCTS_API, {
+    method: "GET",
+    headers: {
+        "Content-Type": "application/json",
+        "x-apikey": APIKEY,
+        "Cache-Control": "no-cache"
+    }
+})
+.then(response => response.json())
+.then(products => {
+    productListContainer.innerHTML = ""; // Clear existing products
+    products.forEach(product => {
+        let productDiv = document.createElement("div");
+        productDiv.classList.add("product");
+
+        productDiv.innerHTML = `
+            <img src="${product.Image}" alt="${product.Name}" class="product-image">
+            <h2>${product.Name}</h2>
+            <p><strong>Description:</strong> ${product.Description}</p>
+            <p><strong>Price:</strong> $${product.Price}</p>
+            <p><strong>Quality:</strong> ${product.Condition}</p>
+            <p><strong>Status:</strong> ${product.Brand}</p>
+            <p><strong>Category:</strong> ${product.Category}</p>
+            <p><strong>Listed on:</strong> ${product["List Date"]}</p>
+            <p><strong>Listed by:</strong> ${product["Lister Email"]}</p>
+        `;
+
+        productListContainer.appendChild(productDiv);
+    });
+})
+.catch(error => {
+    console.error("Error fetching products:", error);
+    productListContainer.innerHTML = "Failed to load products.";
+});
+
 
 // Language Change Function
 function changeLanguage() {
