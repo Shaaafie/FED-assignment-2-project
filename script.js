@@ -1,6 +1,6 @@
 const APIKEY = "67a58bf59c979736731b2a71"; // Your actual API key
 const REGISTER_API = "https://mokesell-714e.restdb.io/rest/register?max=2";
-const LOGIN_API = "https://mokesell-714e.restdb.io/rest/register?max=2";
+const LOGIN_API = "https://mokesell-714e.restdb.io/rest/register";
 
 document.addEventListener("DOMContentLoaded", function () {
   const registerButton = document.getElementById("register-btn");
@@ -40,8 +40,8 @@ document.addEventListener("DOMContentLoaded", function () {
           return response.json();
       })
       .then(data => {
-          alert("Registration successful! Redirecting to login page...");
-          window.location.href = "login.html";
+          alert("Registration successful! Redirecting to homepage...");
+          window.location.href = "homepage.html";
       })
       .catch(error => {
           console.error("Error registering user:", error);
@@ -84,7 +84,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
           let user = users[0];
 
-          if (user.password !== password) { // Ensure Password matches case in DB
+          if (user["Password"] !== password) { // Ensure Password matches case in DB
               alert("Incorrect password. Please try again.");
               return;
           }
