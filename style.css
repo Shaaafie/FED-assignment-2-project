@@ -266,6 +266,7 @@
   text-decoration: none;
   color: black;
   text-align: center;
+  overflow-x: auto;
 }
 
 .listing-img {
