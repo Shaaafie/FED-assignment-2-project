@@ -44,7 +44,7 @@
 
   header {
     display: flex;
-    justify-content:baseline;
+    justify-content: space-between; /* Logo left, nav right */
     align-items: center;
     padding: 10px 20px;
     background-color: #fff;
@@ -77,20 +77,8 @@
     font-weight: bold;
   }
   .logo {
-    width: 70px;
-    padding-right: 10px;
-    justify-content: left;
-    text-decoration: none;
-  }
-
-  .MokeSell {
-    font-size: 35px;
-    font-family: "DM Serif Text", serif;
-    font-weight: 700;
-    font-style: normal;
-    padding-right: 0%;
-    color: #000;
-    text-decoration: none;
+    width: 30px;
+    height: 30px;
   }
 
   .login-home {
@@ -138,6 +126,16 @@
     border: #fff;
     font-size: x-small;
   }
+   
+  .logo {
+    justify-content: left;
+    width: 50px;
+    height: 0px;
+  }
+
+  .MokeSell {
+    align-items: left;
+  }
 
   .help-button {
     color: #000000;
@@ -174,52 +172,181 @@
     cursor: pointer;
       }
 
-.trending .allitems.item{
-  width:300px;
-  height:300px;
-  padding:0;
-  border:none;
-  text-align:center;
-  align-items:center;
-  display:flex;
-  margin:0;
-  gap:20px;
-  border-radius: 20px;
-}
-.item{
-  font:Aerial;
+.divider {
+  border: 1px solid #ddd;
+  margin: 20px 0;
 }
 
-footer {
-  text-align: center;
-  padding: 20px 10px;
-  background: #eaeaea;
-  margin-top: 20px;
+/*trending now*/
+.trending-now {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px;
+  padding: 10px 0;
 }
 
-#product-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+.trending-now h2 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.trending-buttons {
+  display: flex;
   gap: 20px;
 }
 
-.product {
-  border: 1px solid #ddd;
-  padding: 20px;
-  background: #f9f9f9;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+.trend-btn {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #baa5971d;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  text-align: center;
+  padding: 10px;
+  transition: 0.3s ease;
 }
 
-.product img {
-  max-width: 100%;
-  height: auto;
+.trend-btn img {
+  width: 25px;
+  height: 25px;
+  margin-bottom: 5px;
 }
 
-.product h2 {
-  font-size: 24px;
+.trend-btn:hover {
+  background-color: #e65500;
+}
+
+
+/*filter*/
+.sub-heading {
+  text-align: left;
+  font-size: 1.5rem;
   margin-bottom: 10px;
 }
 
-.product p {
-  margin: 5px 0;
+.filter-buttons {
+  display: flex;
+  justify-content: left;
+  gap: 10px;
+  margin-bottom: 20px;
 }
+
+.filter-btn {
+  padding: 10px 20px;
+  border: none;
+  background: #ff6600;
+  color: white;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+/*listing*/
+.listing-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  padding: 20px;
+}
+
+.listing {
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+  color: black;
+  text-align: center;
+}
+
+.listing-img {
+  width: 90%;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.listing-user {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.user-img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+.heart {
+  cursor: pointer;
+  color: red;
+}
+
+.listing-name {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.listing-price {
+  font-size: 1rem;
+  margin-top: 5px;
+}
+
+.condition {
+  font-size: 0.9rem;
+  padding: 2px 5px;
+  border-radius: 5px;
+}
+
+.new {
+  background: green;
+  color: white;
+}
+
+.used {
+  background: orange;
+  color: white;
+}
+
+.like-new {
+  background: blue;
+  color: white;
+}
+
+
+/*great deals*/
+/* View All Button */
+.view-all {
+  display: inline-flex;
+  align-items: center;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #ff6600;
+  text-decoration: none;
+  margin-top: 10px;
+}
+
+.view-all .arrow {
+  margin-left: 5px;
+  font-size: 1.2rem;
+}
+
+
+  footer {
+    text-align: center;
+    padding: 20px 10px;
+    background: #eaeaea;
+    margin-top: 20px;
+  }
