@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<<<<<<< HEAD
     <title>Chat Page</title>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -59,6 +60,60 @@
         </div>
         <input type="text" id="message-input" placeholder="Type your message here..." />
         <button id="send-btn">Send</button>
+=======
+    <title>Chat Interface</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="main-container">
+        <!-- Chat Preview Sidebar -->
+        <div class="chat-sidebar">
+            <div class="sidebar-header">
+                <h2>Chats</h2>
+            </div>
+            <div class="chat-list">
+                <div class="chat-preview active">
+                    <div class="preview-avatar"></div>
+                    <div class="preview-content">
+                        <div class="preview-name">User7098</div>
+                        <div class="preview-message">You: Great, may I know when the item will be delivered? Thanks!</div>
+                    </div>
+                </div>
+                <div class="chat-preview">
+                    <div class="preview-avatar"></div>
+                    <div class="preview-content">
+                        <div class="preview-name">User6543</div>
+                        <div class="preview-message">You: Hi, thank you for your offer! We will update you with further information on the...</div>
+                    </div>
+                </div>
+                <div class="chat-preview">
+                    <div class="preview-avatar"></div>
+                    <div class="preview-content">
+                        <div class="preview-name">User7890</div>
+                        <div class="preview-message">Them: Hi, I have received the item. It is all in good condition. Thank you so much!</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Chat Area -->
+        <div class="chat-container">
+            <div class="chat-header">
+                <div class="chat-header-user">
+                    <div class="user-avatar"></div>
+                    <h3>User7098</h3>
+                </div>
+            </div>
+            <div class="chat-messages" id="chatMessages">
+                <!-- Messages will be inserted here by JavaScript -->
+            </div>
+            <div class="chat-input">
+                <input type="text" id="messageInput" placeholder="Type a message...">
+                <button onclick="sendMessage()">Send</button>
+            </div>
+        </div>
+    </div>
+>>>>>>> 98273f9032af62857c66dbfc5693a34c8e2e412c
     <script src="script.js"></script>
 </body>
 </html>
