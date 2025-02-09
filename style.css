@@ -396,6 +396,115 @@ footer {
 }
 
 
+/*user.html*/
+
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  background: #333;
+  color: white;
+}
+
+.container {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+}
+
+.sidebar {
+  width: 20%;
+  background: #f0f0f0;
+  padding: 15px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  padding: 10px;
+  background: lightblue;
+  margin: 5px 0;
+}
+
+.main-content {
+  width: 75%;
+}
+
+.listing-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.listing {
+  background: #ddd;
+  padding: 15px;
+  text-align: center;
+}
+
+.list-more {
+  grid-column: span 4;
+  background: blue;
+  color: white;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+/* List Product Page */
+.list-product-section {
+  width: 50%;
+  margin: auto;
+}
+
+.add-photo button {
+  background: #ddd;
+  padding: 20px;
+  width: 100%;
+  cursor: pointer;
+}
+
+.condition-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.condition {
+  padding: 10px;
+  border: 1px solid gray;
+  cursor: pointer;
+}
+
+.condition.selected {
+  background: blue;
+  color: white;
+}
+
+.list-product-btn {
+  background: green;
+  color: white;
+  padding: 10px;
+  float: right;
+}
+
+.error {
+  color: red;
+  font-size: 12px;
+}
+
+
+
+
 
 
   footer {
