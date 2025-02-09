@@ -73,18 +73,7 @@
               </ul>
           </div>
   
-          <!-- Right Content -->
-          <div class="main-content">
-              <h2>My Listings</h2>
-              <div class="listing-grid">
-                  <div class="listing">Product 1</div>
-                  <div class="listing">Product 2</div>
-                  <div class="listing">Product 3</div>
-                  <div class="listing">Product 4</div>
-                  <div class="listing">Product 5</div>
-                  <div class="listing">Product 6</div>
-                  <button onclick="window.location.href='list-product.html';">List More Products</button>
-
+          
               </div>
           </div>
       </div>
@@ -92,4 +81,91 @@
   </body>
   </html>
   
-      
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>User Dashboard</title>
+      <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+      <nav class="navbar">
+          <h1>MokeSell</h1>
+      </nav>
+      <div class="container">
+          <aside class="sidebar">
+              <div class="user-info">
+                  <img src="profile.jpg" alt="Profile Picture" class="profile-pic">
+                  <p class="user-id">User123</p>
+              </div>
+              <ul class="menu">
+                  <li><a href="#" class="active">My Listing</a></li>
+                  <li><a href="#">My Purchases</a></li>
+                  <li><a href="#">My Favourites</a></li>
+                  <li><a href="#">My Vouchers</a></li>
+                  <li><a href="#">My MokeSell Points</a></li>
+                  <li><a href="#">Following</a></li>
+                  <li><a href="#">Settings</a></li>
+              </ul>
+          </aside>
+          <main class="content">
+              <h2>My Listings</h2>
+              <div class="listings">
+                <!-- Right Content -->
+          <div class="main-content">
+            <h2>My Listings</h2>
+            <div class="listing-grid">
+              <a href="#" class="listing">
+                  <img src="/Images/sony camera.jpg" alt="Camera" class="listing-img">
+                  <div class="listing-user">
+                      <img src="Images/profilepic1.jpg" alt="User Profile" class="user-img">
+                      <span class="user-id">User123</span>
+                      <span class="heart">❤️</span>
+                  </div>
+                  <p class="listing-name">Sony camera</p>
+                  <p class="listing-price">SGD 450 <span class="condition new">Brand New</span></p>
+              </a>
+            
+              <a href="#" class="listing">
+                  <img src="Images/gucci handbag.jpg" alt="Bag" class="listing-img">
+                  <div class="listing-user">
+                      <img src="Images/profilepic2.jpg" alt="User Profile" class="user-img">
+                      <span class="user-id">Chloelee</span>
+                      <span class="heart">❤️</span>
+                  </div>
+                  <p class="listing-name">Gucci Handbag</p>
+                  <p class="listing-price">SGD 1,200 <span class="condition used">Likely Used</span></p>
+              </a>
+            
+              <a href="#" class="listing">
+                  <img src="Images/Nespresso coffee maker.jpg" alt="Coffee Maker" class="listing-img">
+                  <div class="listing-user">
+                      <img src="Images/profilepic3.jpg" alt="User Profile" class="user-img">
+                      <span class="user-id">hihiwony</span>
+                      <span class="heart">❤️</span>
+                  </div>
+                  <p class="listing-name">Nespresso Coffee Machine</p>
+                  <p class="listing-price">SGD 200 <span class="condition like-new">Like New</span></p>
+              </a>
+            
+              <a href="#" class="listing">
+                <img src="Images/Nespresso coffee maker.jpg" alt="Coffee Maker" class="listing-img">
+                <div class="listing-user">
+                    <img src="Images/profilepic3.jpg" alt="User Profile" class="user-img">
+                    <span class="user-id">hihiwony</span>
+                    <span class="heart">❤️</span>
+                </div>
+                <p class="listing-name">Nespresso Coffee Machine</p>
+                <p class="listing-price">SGD 25 <span class="condition like-new">Like New</span></p>
+            </a>
+            
+                <button onclick="window.location.href='list-product.html';">List More Products</button>
+
+              </div>
+              <button class="list-more" onclick="window.location.href='list-product.html'">List More Products</button>
+          </main>
+      </div>
+  </body>
+  </html>
+  
