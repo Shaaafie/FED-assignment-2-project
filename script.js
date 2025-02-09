@@ -91,7 +91,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
           localStorage.setItem("loggedInUser", JSON.stringify(user));
           alert("Login successful! Redirecting to homepage...");
-          window.location.href = "homepage.html";
+          window.location.href = "homepage(loggedin).html";
       })
       .catch(error => {
           console.error("Error logging in:", error);
