@@ -50,19 +50,6 @@
     background-color: #f5f5f5;
     padding-top: 50px;
   }
-<<<<<<< HEAD
-
-  header {
-    display: flex;
-    justify-content: space-between; /* Logo left, nav right */
-    align-items: center;
-    padding: 10px 20px;
-    background-color: #fff;
-    border-bottom: 1px solid #ddd;
-    margin: 0;
-  } 
-=======
->>>>>>> db43449e9923254396074e157bd150f96449db22
 
   header {
     display: flex;
@@ -73,18 +60,6 @@
     border-bottom: 1px solid #ddd;
   } 
 
-<<<<<<< HEAD
-/* Navigation */
-nav {
-  display: flex;
-  gap: 10px;
-  justify-content: right;
-  align-items: center;
-  background-color: #fff;
-  padding: 10px;
-  width: 100%;
-}
-=======
   nav {
     display: flex;
     gap: 10px; /* Adds spacing between nav items */
@@ -93,7 +68,6 @@ nav {
   header h1 {
     font-size: 1.5rem;
   }
->>>>>>> db43449e9923254396074e157bd150f96449db22
 
   nav {
     display: flex;
@@ -157,6 +131,29 @@ nav {
     overflow: hidden;
   }
 
+  .chat-button {
+    display: flex;
+    align-items: center;
+    padding: 8px 12px;
+    background: #ff6600;
+    color: white;
+    font-weight: bold;
+    border-radius: 20px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.chat-button:hover {
+    background: #e65500;
+}
+
+.chat-button img {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+}
+
+
   .language {
     border: #fff;
     font-size: x-small;
@@ -165,7 +162,7 @@ nav {
   .logo {
     justify-content: left;
     width: 50px;
-    height: 0px;
+    height: 50px;
   }
 
   .MokeSell {
