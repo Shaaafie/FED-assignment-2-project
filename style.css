@@ -376,3 +376,31 @@ footer {
   bottom: 10px;
   right: 15px;
 }
+/*responsive review */
+/* For tablets and smaller screens (below 900px) */
+@media (max-width: 900px) {
+  .review-box {
+      max-width: 45%; /* Switches to 2 boxes per row */
+  }
+}
+
+/* For mobile screens (below 600px) */
+@media (max-width: 600px) {
+  .review-container {
+      flex-direction: row-reverse; /* Stacks boxes in 1 column */
+      align-items: center; /* Centers them */
+  }
+  .review-box {
+      max-width: 90%; /* Full width on mobile */
+  }
+}
+
+
+
+
+  footer {
+    text-align: center;
+    padding: 20px 10px;
+    background: #eaeaea;
+    margin-top: 20px;
+  }
