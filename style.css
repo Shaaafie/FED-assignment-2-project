@@ -285,6 +285,7 @@
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
   padding: 20px;
+ 
 }
 
 .listing {
@@ -295,9 +296,14 @@
   text-decoration: none;
   color: black;
   text-align: center;
+  width: 250px;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  text-align: center;
 }
 
-.responsive-img{
+.responsive-img{  
   width: 100%;
   height: auto;
   }
@@ -510,9 +516,9 @@ button#viewMoreBtn:hover {
 }
 
 
+
+
 /*user.html*/
-
-
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -630,6 +636,10 @@ body {
 }
 
 .main-container {
+  position:relative;
+  width:1396px;
+  max-width: 100%;
+  height:cal(100%-40%);
   display: flex;
   height: 100vh;
   background: #f5f5f5;
