@@ -4,9 +4,9 @@ The platform enables users to browse listings, chat with buyers and sellers, and
 digital cameras, luxury goods, and home appliances. With an intuitive user interface, MokeSell provides a seamless shopping experience
 for users looking to buy or sell items safely and conveniently.
 
-Design Process
+Design and Coding Process
 MokeSell is designed for buyers and sellers who want a user-friendly platform for second-hand transactions.
-The key goal is to provide easy listing, quick communication, and efficient filtering so users can find relevant products without hassle.
+The key goal is to provide easy listing, quick communication, and efficient filtering so users can find relevant products without hassle. We used RestDB API for the database to store users information like email, name and passwords. With the help of JavaScript we get do the Register and Login function which POST and GET data from the RestDB database.
 
 User Stories:
 As a buyer, I want to filter listings by category, so that I can find products relevant to me.
