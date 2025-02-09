@@ -3,53 +3,130 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chat Page</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Chat Interface</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 20px;
+            line-height: 1.6;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        .chat-preview {
+            margin-bottom: 20px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+        }
+
+        .chat-messages {
+            margin-top: 30px;
+        }
+
+        .message {
+            margin-bottom: 10px;
+        }
+
+        .timestamp {
+            color: #666;
+            margin-left: 5px;
+        }
+
+        .chat-input {
+            margin-top: 20px;
+        }
+
+        input[type="text"] {
+            padding: 5px;
+            width: 250px;
+            margin-right: 5px;
+        }
+
+        button {
+            padding: 5px 15px;
+        }
+
+        .user-header {
+            font-size: 24px;
+            margin: 20px 0;
+        }
+    </style>
 </head>
 <body>
-    <nav class="navbar">
-        <h1>MokeSell</h1>
-    </nav>
-    <div class="chat-container">
-        <aside class="chat-list">
-            <h3>Chats</h3>
-            <div class="chat-preview">
-                <img src="user1.jpg" alt="User Profile" class="chat-pfp">
-                <div class="chat-info">
-                    <p class="chat-user">UserA</p>
-                    <p class="chat-message">Hello, is this available?</p>
-                </div>
-            </div>
-            <div class="chat-preview">
-                <img src="user2.jpg" alt="User Profile" class="chat-pfp">
-                <div class="chat-info">
-                    <p class="chat-user">UserB</p>
-                    <p class="chat-message">Can you lower the price?</p>
-                </div>
-            </div>
-            <div class="chat-preview">
-                <img src="user3.jpg" alt="User Profile" class="chat-pfp">
-                <div class="chat-info">
-                    <p class="chat-user">UserC</p>
-                    <p class="chat-message">When can we meet?</p>
-                </div>
-            </div>
-        </aside>
-        <section class="chat-box">
-            <div class="chat-header">
-                <img src="userA.jpg" alt="User Profile" class="chat-pfp">
-                <p class="chat-user">UserA</p>
-            </div>
-            <div class="chat-messages">
-                <p class="message received">Hello, is this available?</p>
-                <p class="message sent">Yes, it is!</p>
-            </div>
-            <div class="chat-input">
-                <input type="text" placeholder="Type a message...">
-                <button>Send</button>
-            </div>
-        </section>
+    <h1>Chats</h1>
+    
+    <!-- Chat Previews -->
+    <div class="chat-preview">
+        <div>User7098</div>
+        <div>You: Great, may I know when the item will be delivered? Thanks!</div>
     </div>
-    <script src="script.js"></script>
+    <div class="chat-preview">
+        <div>User6543</div>
+        <div>You: Hi, thank you for your offer! We will update you with further information on the...</div>
+    </div>
+    <div class="chat-preview">
+        <div>User7890</div>
+        <div>Them: Hi, I have received the item. It is all in good condition. Thank you so much!</div>
+    </div>
+
+    <!-- Active Chat -->
+    <div class="user-header">User7098</div>
+    
+    <div class="chat-messages">
+        <div class="message">Hi, may I know if you still have stock?</div>
+        <div class="timestamp">Yesterday, 6:15pm</div>
+        
+        <div class="message">Hi, yes we still have this item in stock and a few colours are still available</div>
+        <div class="timestamp">Yesterday, 6:30pm</div>
+        
+        <div class="message">Ooh okay great, may I know if blue or yellow colour are still available?</div>
+        <div class="timestamp">Yesterday, 7:45pm</div>
+        
+        <div class="message">Yes, blue and yellow colour are still available for the same price.</div>
+        <div class="timestamp">Yesterday, 8:10pm</div>
+        
+        <div class="message">Great, may I know when the item will be delivered? Thanks!</div>
+        <div class="timestamp">Today, 11:00pm</div>
+    </div>
+
+    <div class="chat-input">
+        <input type="text" placeholder="Type a message...">
+        <button>Send</button>
+    </div>
+
+    <script>
+        // Simple send message functionality
+        const input = document.querySelector('input');
+        const button = document.querySelector('button');
+
+        function sendMessage() {
+            const text = input.value.trim();
+            if (text) {
+                const messagesDiv = document.querySelector('.chat-messages');
+                const messageDiv = document.createElement('div');
+                messageDiv.className = 'message';
+                messageDiv.textContent = text;
+                
+                const timeDiv = document.createElement('div');
+                timeDiv.className = 'timestamp';
+                timeDiv.textContent = new Date().toLocaleTimeString();
+                
+                messagesDiv.appendChild(messageDiv);
+                messagesDiv.appendChild(timeDiv);
+                
+                input.value = '';
+            }
+        }
+
+        button.addEventListener('click', sendMessage);
+        input.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                sendMessage();
+            }
+        });
+    </script>
 </body>
 </html>
