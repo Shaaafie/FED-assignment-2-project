@@ -99,6 +99,27 @@ document.addEventListener("DOMContentLoaded", function () {
       });
   });
 
+  document.addEventListener("DOMContentLoaded", function () {
+    let isLoggedIn = localStorage.getItem("isLoggedIn");
+    let username = localStorage.getItem("username");
+
+    if (isLoggedIn === "true") {
+        document.getElementById("login-tab").style.display = "none";
+        document.getElementById("register-tab").style.display = "none";
+        document.getElementById("account-tab").style.display = "inline";
+        document.getElementById("logout-btn").style.display = "inline";
+    } else {
+        document.getElementById("account-tab").style.display = "none";
+        document.getElementById("logout-btn").style.display = "none";
+    }
+});
+
+function logout() {
+    localStorage.removeItem("isLoggedIn");
+    localStorage.removeItem("username");
+    window.location.href = "homepage.html";
+}
+
   // List product
   document.getElementById("product-form").addEventListener("submit", function (e) {
     e.preventDefault();
