@@ -490,7 +490,11 @@ button#viewMoreBtn:hover {
       max-width: 90%; /* Full width on mobile */
   }
 }
+
+
 /*user.html*/
+
+
 body {
   font-family: Arial, sans-serif;
   margin: 0;
