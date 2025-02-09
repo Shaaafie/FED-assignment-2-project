@@ -28,9 +28,9 @@
 }
 
 .notification-hidden {
-  top: -50px;
-  opacity: 0;
-  pointer-events: none;
+  display: none; /* Hides the notification */
+  opacity: 0; /* If you're using a fade-out effect */
+  transition: opacity 0.3s ease; /* Optional fade-out transition */
 }
 
 .close-btn {
@@ -144,7 +144,7 @@ nav {
     padding: 8px;
     border: none;
     outline: none;
-    width: 200px;
+    width: 300px;
   }
 
   .search-form {
@@ -152,6 +152,7 @@ nav {
     border: 1px solid #ccc;
     border-radius: 5px;
     overflow: hidden;
+    max-width: 300px;
   }
 
   .chat-button {

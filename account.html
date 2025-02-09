@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>MokeSell</title>
+    <title>User Account</title>
+    <script defer src="account.js"></script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
@@ -25,7 +26,7 @@
   </header>
 
   <header class="mokesell">
-    <a href="index.html">
+    <a href="homepage(loggedin).html">
       <img src="Images/MokeSell_Logo-removebg-preview.png" alt="Logo" class="logo">
     </a>
     <h1 href="homepage(loggedin).html" class="MokeSell">MokeSell</h1>
@@ -71,16 +72,11 @@
 
         <!-- Right Content -->
         <div class="main-content">
-            <h2>My Listings</h2>
+            <h1>Your Listings</h1>
             <div class="listing-grid">
-                <div class="listing">Product 1</div>
-                <div class="listing">Product 2</div>
-                <div class="listing">Product 3</div>
-                <div class="listing">Product 4</div>
-                <div class="listing">Product 5</div>
-                <div class="listing">Product 6</div>
-                <button class="list-more" onclick="window.location.href='list-product.html'">List More Products</button>
+                <!-- Listings will be dynamically generated here -->
             </div>
+            <button class="list-more" onclick="window.location.href='list-product.html'">List More Products</button>
         </div>
     </div>
 
