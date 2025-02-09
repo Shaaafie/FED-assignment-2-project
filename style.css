@@ -7,6 +7,7 @@
   }
 }
 
+/* Notification Bar */
 .notification-bar {
   background-color: #c8926d;
   color: white;
@@ -19,12 +20,6 @@
   width: 100%;
   z-index: 1000;
   transition: top 0.3s ease, opacity 0.3s ease;
-}
-
-.icon{
-  width:200px;
-  height: 70px;
-  float:left;
 }
 
 .notification-hidden {
@@ -43,150 +38,126 @@
   font-size: 18px;
   cursor: pointer;
 }
-  body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f5f5f5;
-    padding-top: 50px;
-  }
 
-  header {
-    display: flex;
-    justify-content: space-between; /* Logo left, nav right */
-    align-items: center;
-    padding: 10px 20px;
-    background-color: #fff;
-    border-bottom: 1px solid #ddd;
-  } 
-
-  nav {
-    display: flex;
-    gap: 10px; /* Adds spacing between nav items */
-  }
-
-  header h1 {
-    font-size: 1.5rem;
-  }
-
-  nav {
-    display: flex;
-    justify-content:right; /* Adjusts spacing */
-    align-items: center;
-    background-color: #fff;
-    padding: 10px;
-    border-bottom: 1px solid #ddd;
-    width: 100%; /* Ensures full width */
-  }
-
-  nav a {
-    text-decoration: none;
-    color: #000000;
-    font-size: x-small;
-    font-weight: bold;
-  }
-  .logo {
-    width: 30px;
-    height: 30px;
-  }
-
-  .login-home {
-    text-decoration: none;
-    color: #000000;
-    font-size: x-small;
-    font-weight: bold;
-  }
-
-  nav a.active {
-    color: #000;
-  }
-
-  .section {
-    display: none;
-  }
-
-  .section.active {
-    display: block;
-  }
-
-  .categories, .currency {
-    padding: 5px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background: white;
-    cursor: pointer;
-  }
-
-  #search-box {
-    padding: 8px;
-    border: none;
-    outline: none;
-    width: 200px;
-  }
-
-  .search-form {
-    display: flex;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    overflow: hidden;
-  }
-
-  .language {
-    border: #fff;
-    font-size: x-small;
-  }
-   
-  .logo {
-    justify-content: left;
-    width: 50px;
-    height: 0px;
-  }
-
-  .MokeSell {
-    align-items: left;
-  }
-
-  .help-button {
-    color: #000000;
-    cursor: pointer;
-    border-radius: 5px;
-    font-size: x-small;
-    font-weight: bold;
-    margin-left: 10px;
-    text-decoration: none;
-  }
-
-  .form-container {
-    background: #fff;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    width: 90%;
-    max-width: 400px;
-    margin: 20px auto;
-  }
-
-  .form-container input, .form-container button {
-    width: 100%;
-    padding: 12px;
-    margin: 10px 0;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-  }
-
-  .form-container button {
-    background-color: #555;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-      }
-
-.divider {
-  border: 1px solid #ddd;
-  margin: 20px 0;
+/* General Layout */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f5f5f5;
+  padding-top: 50px;
 }
 
-/*trending now*/
+/* Header */
+header {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Navigation */
+nav {
+  display: flex;
+  gap: 10px;
+  justify-content: right;
+  align-items: center;
+  background-color: #fff;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  width: 100%;
+}
+
+nav a {
+  text-decoration: none;
+  color: #000000;
+  font-size: x-small;
+  font-weight: bold;
+}
+
+nav a.active {
+  color: #000;
+}
+
+/* Logo Fix */
+.logo {
+  display: block;
+  width: 70px;
+  height: auto;
+  object-fit: contain; /* Ensures proper scaling */
+  border: 2px solid transparent; /* Debugging border, remove later */
+  background-color: white; /* Debugging background, remove later */
+}
+
+.MokeSell {
+  margin-left: 10px;
+  margin-right: 40%;
+}
+
+/* Categories & Currency */
+.categories,
+.currency {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background: white;
+  cursor: pointer;
+}
+
+/* Search Box */
+#search-box {
+  padding: 8px;
+  border: none;
+  outline: none;
+  width: 200px;
+}
+
+.search-form {
+  display: flex;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+/* Help Button */
+.help-button {
+  color: #000000;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: x-small;
+  font-weight: bold;
+  margin-left: 10px;
+  text-decoration: none;
+}
+
+/* Form Container */
+.form-container {
+  background: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 400px;
+  margin: 20px auto;
+}
+
+.form-container input,
+.form-container button {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.form-container button {
+  background-color: #555;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+/* Trending Now Section */
 .trending-now {
   display: flex;
   justify-content: space-between;
@@ -222,10 +193,6 @@
   text-align: center;
   padding: 10px;
   transition: 0.3s ease;
-  font-family: "Parkinsans", serif;
-  font-optical-sizing: auto;
-  font-weight: 500;
-  font-style: normal;
 }
 
 .trend-btn img {
@@ -238,14 +205,7 @@
   background-color: #e65500;
 }
 
-
-/*filter*/
-.sub-heading {
-  text-align: left;
-  font-size: 1.5rem;
-  margin-bottom: 10px;
-}
-
+/* Filter Buttons */
 .filter-buttons {
   display: flex;
   justify-content: left;
@@ -263,7 +223,7 @@
   font-size: 1rem;
 }
 
-/*listing*/
+/* Listing Grid */
 .listing-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -281,34 +241,17 @@
   text-align: center;
 }
 
-.responsive-img{
-  width: 100%;
-  height: auto;
-  }
-
-.responsive-img-max{
-  max-width: 100%;
-  height: auto;
-  }
-
-.responsive-img-max-fixed-width{
-max-width: 100%;
-width: 400px;
-height: auto;
-}
-
-
-
 .listing-img {
-  width: 90%;
-  height: 120px;
+  display: block; /* Ensures the image behaves like a block element */
+  margin: 0 auto; /* Centers the image horizontally */
+  width: 120px;
+  height: auto;
   object-fit: cover;
   border-radius: 10px;
 }
 
 .listing-user {
   display: flex;
-  align-items: center;
   justify-content: center;
   gap: 10px;
   margin: 10px 0;
@@ -356,69 +299,30 @@ height: auto;
   color: white;
 }
 
-
-/*great deals*/
-/* View All Button */
-.view-all {
-  display: inline-flex;
-  align-items: center;
-  font-size: 1rem;
-  font-weight: bold;
-  color: #ff6600;
-  text-decoration: none;
-  margin-top: 10px;
+/* Responsive Review Section */
+@media (max-width: 900px) {
+  .review-box {
+    max-width: 45%; /* Switches to 2 boxes per row */
+  }
 }
 
-.view-all .arrow {
-  margin-left: 5px;
-  font-size: 1.2rem;
-}
-/*recommended listing*/
-#recommended {
-  text-align: left;
-  margin-top: 40px;
-}
-
-.listing-container {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 15px;
-  max-width: 1000px;
-  margin: 0 auto;
+@media (max-width: 600px) {
+  .review-container {
+    flex-direction: row-reverse; /* Stacks boxes in 1 column */
+    align-items: center; /* Centers them */
+  }
+  .review-box {
+    max-width: 90%; /* Full width on mobile */
+  }
 }
 
-.listing {
-  background: #f5f5f5;
-  padding: 15px;
+/* Footer */
+footer {
   text-align: center;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.hidden {
-  display: none;
-}
-
-
-/*view more button*/
-.viewmore{
-  text-align: center;
-}
-
-button#viewMoreBtn {
+  padding: 20px 10px;
+  background: #eaeaea;
   margin-top: 20px;
-  padding: 10px 20px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
 }
-
-button#viewMoreBtn:hover {
-  background-color: #0056b3;
-}
-
 
 /*customer reviews*/
 #reviews {
@@ -472,31 +376,3 @@ button#viewMoreBtn:hover {
   bottom: 10px;
   right: 15px;
 }
-/*responsive review */
-/* For tablets and smaller screens (below 900px) */
-@media (max-width: 900px) {
-  .review-box {
-      max-width: 45%; /* Switches to 2 boxes per row */
-  }
-}
-
-/* For mobile screens (below 600px) */
-@media (max-width: 600px) {
-  .review-container {
-      flex-direction: row-reverse; /* Stacks boxes in 1 column */
-      align-items: center; /* Centers them */
-  }
-  .review-box {
-      max-width: 90%; /* Full width on mobile */
-  }
-}
-
-
-
-
-  footer {
-    text-align: center;
-    padding: 20px 10px;
-    background: #eaeaea;
-    margin-top: 20px;
-  }
