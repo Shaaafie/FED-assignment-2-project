@@ -268,3 +268,39 @@ function handleFormSubmit(event) {
     document.getElementById("helpForm").reset();
   }
 }
+
+/*user.html,listingnewproducts.html*/
+document.addEventListener("DOMContentLoaded", function () {
+    const conditions = document.querySelectorAll(".condition");
+    let selectedCondition = null;
+
+    conditions.forEach(button => {
+        button.addEventListener("click", function () {
+            conditions.forEach(btn => btn.classList.remove("selected"));
+            this.classList.add("selected");
+            selectedCondition = this.dataset.value;
+        });
+    });
+
+    document.getElementById("product-form").addEventListener("submit", function (e) {
+        e.preventDefault();
+        let valid = true;
+
+        if (!selectedCondition) {
+            document.getElementById("condition-error").textContent = "This field is required";
+            valid = false;
+        }
+
+        document.querySelectorAll("input[required], textarea[required], select[required]").forEach(field => {
+            if (!field.value) {
+                document.getElementById(field.id + "-error").textContent = "This field is required";
+                valid = false;
+            }
+        });
+
+        if (valid) {
+            alert("Product listed successfully!");
+        }
+    });
+});
+
