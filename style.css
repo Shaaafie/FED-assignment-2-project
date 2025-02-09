@@ -1,3 +1,12 @@
+@media (max-width: 768px) {
+  .listing-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .trending-buttons {
+    flex-wrap: wrap;
+  }
+}
+
 .notification-bar {
   background-color: #c8926d;
   color: white;
@@ -266,8 +275,25 @@
   text-decoration: none;
   color: black;
   text-align: center;
-  overflow-x: auto;
 }
+
+.responsive-img{
+  width: 100%;
+  height: auto;
+  }
+
+.responsive-img-max{
+  max-width: 100%;
+  height: auto;
+  }
+
+.responsive-img-max-fixed-width{
+max-width: 100%;
+width: 400px;
+height: auto;
+}
+
+
 
 .listing-img {
   width: 90%;
