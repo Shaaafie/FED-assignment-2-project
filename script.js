@@ -220,3 +220,137 @@ fetch(PRODUCTS_API, {
         document.body.style.paddingTop = "0"; // Remove extra spacing
     }, 300);
   }
+
+
+// Sample messages to initialize the chat
+const initialMessages = [
+  {
+      text: "Hi, may I know if you still have stock?",
+      time: "Yesterday, 6:15pm",
+      sent: true
+  }, 
+  {
+      text: "Hi, yes we still have this item in stock and a few colours are still available",
+      time: "Yesterday, 6:30pm",
+      sent: false
+  },
+  {
+      text: "Ooh okay great, may I know if blue or yellow colour are still available?",
+      time: "Yesterday, 7:45pm",
+      sent: true
+  },
+  {
+      text: "Yes, blue and yellow colour are still available for the same price.",
+      time: "Yesterday, 8:10pm",
+      sent: false
+  },
+  {
+      text: "Great, may I know when the item will be delivered? Thanks!",
+      time: "Today, 11:00pm",
+      sent: true
+  }
+];
+
+// Function to create a message element
+function createMessageElement(message) {
+  const messageDiv = document.createElement('div');
+  messageDiv.className = `message ${message.sent ? 'sent' : ''}`;
+  
+  const avatar = document.createElement('div');
+  avatar.className = 'avatar';
+  
+  const content = document.createElement('div');
+  content.className = 'message-content';
+  
+  const text = document.createElement('div');
+  text.textContent = message.text;
+  
+  const time = document.createElement('div');
+  time.className = 'message-time';
+  time.textContent = message.time;
+  
+  content.appendChild(text);
+  content.appendChild(time);
+  messageDiv.appendChild(avatar);
+  messageDiv.appendChild(content);
+  
+  return messageDiv;
+}
+
+// Function to display messages
+function displayMessages() {
+  const chatMessages = document.getElementById('chatMessages');
+  chatMessages.innerHTML = ''; // Clear existing messages
+  initialMessages.forEach(message => {
+      chatMessages.appendChild(createMessageElement(message));
+  });
+  chatMessages.scrollTop = chatMessages.scrollHeight;
+}
+
+// Function to send a new message
+function sendMessage() {
+  const input = document.getElementById('messageInput');
+  const text = input.value.trim();
+  
+  if (text) {
+      const message = {
+          text: text,
+          time: new Date().toLocaleTimeString(),
+          sent: true
+      };
+      
+      const chatMessages = document.getElementById('chatMessages');
+      chatMessages.appendChild(createMessageElement(message));
+      chatMessages.scrollTop = chatMessages.scrollHeight;
+      
+      // Update the preview message in sidebar
+      const activePreview = document.querySelector('.chat-preview.active .preview-message');
+      if (activePreview) {
+          activePreview.textContent = `You: ${text}`;
+      }
+      
+      input.value = '';
+  }
+}
+
+// Initialize the chat
+displayMessages();
+
+// Allow sending message with Enter key
+document.getElementById('messageInput').addEventListener('keypress', function(e) {
+  if (e.key === 'Enter') {
+      sendMessage();
+  }
+});
+
+// Add click handlers for chat previews
+document.querySelectorAll('.chat-preview').forEach(preview => {
+  preview.addEventListener('click', function() {
+      // Remove active class from all previews
+      document.querySelectorAll('.chat-preview').forEach(p => p.classList.remove('active'));
+      // Add active class to clicked preview
+      this.classList.add('active');
+  });
+});
+
+
+
+//make sure js not hiding username of listing
+// Example function to create a listing dynamically
+function createListing(item) {
+  let container = document.createElement("div");
+  container.classList.add("listing");
+
+  container.innerHTML = `
+      <img src="${item.image}" class="listing-img">
+      <div class="user-info">
+          <img src="${item.userPfp}" class="user-pfp">
+          <p class="username">${item.username || "Unknown"}</p>
+          <button class="like-btn">❤️</button>
+      </div>
+      <p class="item-name">${item.name}</p>
+      <p class="item-price">$${item.price} <span class="item-condition">${item.condition}</span></p>
+  `;
+
+  document.querySelector(".listings-container").appendChild(container);
+}
