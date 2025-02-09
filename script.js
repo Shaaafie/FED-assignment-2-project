@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", function () {
         })
         .then((data) => {
           alert("Registration successful! Redirecting to homepage...");
-          window.location.href = "homepage.html";
+          window.location.href = "index.html";
         })
         .catch((error) => {
           console.error("Error registering user:", error);
@@ -119,7 +119,7 @@ document.addEventListener("DOMContentLoaded", function () {
 function logout() {
   localStorage.removeItem("isLoggedIn");
   localStorage.removeItem("username");
-  window.location.href = "homepage.html";
+  window.location.href = "index.html";
 }
 
 // List Product

@@ -50,22 +50,16 @@
     background-color: #f5f5f5;
     padding-top: 50px;
   }
-<<<<<<< HEAD
 
   header {
     display: flex;
-    justify-content: space-between; /* Logo left, nav right */
     align-items: center;
     padding: 10px 20px;
     background-color: #fff;
     border-bottom: 1px solid #ddd;
     margin: 0;
   } 
-=======
->>>>>>> 0e8bd8534c8f51af7ceafbae5101ea84ef371880
 
-
-<<<<<<< HEAD
 /* Navigation */
 nav {
   display: flex;
@@ -77,8 +71,6 @@ nav {
   width: 100%;
 }
 
-=======
->>>>>>> 0e8bd8534c8f51af7ceafbae5101ea84ef371880
   nav {
     display: flex;
     gap: 10px; /* Adds spacing between nav items */
@@ -87,8 +79,6 @@ nav {
   header h1 {
     font-size: 1.5rem;
   }
-<<<<<<< HEAD
-=======
 
   nav {
     display: flex;
@@ -96,7 +86,6 @@ nav {
     align-items: center;
     background-color: #fff;
     padding: 10px;
-    border-bottom: 1px solid #ddd;
     width: 100%; /* Ensures full width */
   }
 
@@ -110,7 +99,10 @@ nav {
     width: 30px;
     height: 30px;
   }
->>>>>>> 0e8bd8534c8f51af7ceafbae5101ea84ef371880
+
+  .MokeSell {
+    margin-left: 10px;
+  }
 
   .login-home {
     text-decoration: none;
@@ -131,7 +123,16 @@ nav {
     display: block;
   }
 
-  .categories, .currency {
+  .categories {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: white;
+    cursor: pointer;
+    margin-left: 30%;
+  }
+
+.currency {
     padding: 5px;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -794,10 +795,6 @@ body {
       height: 70vh;
   }
 }
-
-
-
-
 
   footer {
     text-align: center;
