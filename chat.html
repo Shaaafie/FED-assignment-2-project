@@ -4,52 +4,61 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chat Page</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <nav class="navbar">
-        <h1>MokeSell</h1>
+<header>
+    <a class="help-button" href="helpform.html">Help</a>
+    <nav>
+      <a href="#" id="notifs-tab" class="active">Notifications</a>
+      <select id="languageSwitcher" onchange="changeLanguage()">
+        <option value="en">English</option>
+        <option value="es">中文</option>
+        <option value="es">French</option>
+        <option value="fr">한국어</option>
+      </select>
+      <a href="account.html">My Account</a>
     </nav>
-    <div class="chat-container">
-        <aside class="chat-list">
-            <h3>Chats</h3>
-            <div class="chat-preview">
-                <img src="user1.jpg" alt="User Profile" class="chat-pfp">
-                <div class="chat-info">
-                    <p class="chat-user">UserA</p>
-                    <p class="chat-message">Hello, is this available?</p>
-                </div>
+  </header>
+
+  <header class="mokesell">
+    <a href="homepage(loggedin).html">
+      <img src="Images/MokeSell_Logo-removebg-preview.png" alt="Logo" class="logo">
+    </a>
+    <h1 class="MokeSell">MokeSell</h1>
+
+ 
+  <select class="categories">
+      <option value="">All Categories</option>
+      <option value="electronics">Electronics</option>
+      <option value="fashion">Fashion</option>
+      <option value="home">Home & Living</option>
+  </select>
+  <select class="currency">
+      <option value="SGD">SGD</option>
+  </select>
+  <form class="search-form">
+      <input type="text" placeholder="Search for items..." id="search-box">
+      <button type="submit">🔍</button>
+  </form>
+  <!-- Chat Button -->
+  <a href="chat.html" class="chat-button">
+    <img src="Images/1.jpg" alt="Chat Icon">
+    <span>Chat</span>
+  </a>
+  </header>
+<body>
+    <div id="chat-container">
+        <div id="chat-box">
+            <!-- Messages will be displayed here -->
+            <div class="message user">
+                <div class="text user">Hello!</div>
             </div>
-            <div class="chat-preview">
-                <img src="user2.jpg" alt="User Profile" class="chat-pfp">
-                <div class="chat-info">
-                    <p class="chat-user">UserB</p>
-                    <p class="chat-message">Can you lower the price?</p>
-                </div>
+            <div class="message">
+                <div class="text other">Hi there!</div>
             </div>
-            <div class="chat-preview">
-                <img src="user3.jpg" alt="User Profile" class="chat-pfp">
-                <div class="chat-info">
-                    <p class="chat-user">UserC</p>
-                    <p class="chat-message">When can we meet?</p>
-                </div>
-            </div>
-        </aside>
-        <section class="chat-box">
-            <div class="chat-header">
-                <img src="userA.jpg" alt="User Profile" class="chat-pfp">
-                <p class="chat-user">UserA</p>
-            </div>
-            <div class="chat-messages">
-                <p class="message received">Hello, is this available?</p>
-                <p class="message sent">Yes, it is!</p>
-            </div>
-            <div class="chat-input">
-                <input type="text" placeholder="Type a message...">
-                <button>Send</button>
-            </div>
-        </section>
-    </div>
+        </div>
+        <input type="text" id="message-input" placeholder="Type your message here..." />
+        <button id="send-btn">Send</button>
     <script src="script.js"></script>
 </body>
 </html>
