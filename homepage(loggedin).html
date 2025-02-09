@@ -25,8 +25,7 @@
         <option value="es">French</option>
         <option value="fr">한국어</option>
       </select>
-      <a href="register.html" id="register-tab">Register</a>
-      <a href="login.html">Log in</a>
+      <a href="account.html">Account</a>
     </nav>
   </header>
 
@@ -35,7 +34,6 @@
       <img src="Images/MokeSelllogo.png" alt="Logo" class="logo">
     </a>
     <h1 href="homepage.html">MokeSell</h1>
-    <img src="Images/MokeSelllogo.png" alt="Mokesell Logo" class="logo">
  
   <select class="categories">
       <option value="">All Categories</option>
@@ -54,36 +52,25 @@
 
   <main id="main-page" class="Trending now">
     <h2>Trending Now</h2>
-  </main>
-
-  <main id="register-page" class="section">
-    <div class="form-container">
-      <h2>Register</h2>
-      <input type="text" id="register-name" placeholder="Full Name">
-      <input type="email" id="register-email" placeholder="Email">
-      <input type="text" id="register-username" placeholder="Username">
-      <input type="password" id="register-password" placeholder="Password">
-      <button onclick="handleRegister()">Register</button>
-    </div>
-  </main>  
+  </main> 
 
 <div class="trending-now">
   <div class="trending-buttons">
       <button class="trend-btn">
-          <img src="Images/fashion.png" alt="Fashion" style="width: 50px; height:auto">
+          <img src="Images/1.jpg" alt="Fashion">
           <span>Fashion</span>
       </button>
       <button class="trend-btn">
-          <img src="Images/camera.png" alt="Digital Cameras" style="width: 50px; height:auto">
-          <span style="font-size:small;">Digital Cameras</span>
+          <img src="Images/2.jpg" alt="Digital Cameras">
+          <span>Digital Cameras</span>
       </button>
       <button class="trend-btn">
-          <img src="Images/luxury bag.png" alt="Luxury" style="width: 50px; height:auto">
+          <img src="Images/3.jpg" alt="Luxury">
           <span>Luxury</span>
       </button>
       <button class="trend-btn">
-          <img src="Images/house.png" alt="Home Appliances" style="width: 50px; height:auto">
-          <span style="font-size:small;">Home Appliances</span>
+          <img src="Images/4.jpg" alt="Home Appliances">
+          <span>Home Appliances</span>
       </button>
   </div>
 </div>
@@ -100,7 +87,7 @@
 
 <div class="listing-grid">
   <!-- Example Listing (Repeat for multiple listings) -->
-  <a href="#" class="listing">
+  <a href="listing1.html" class="listing">
       <img src="/Images/sony camera.jpg" alt="Camera" class="listing-img">
       <div class="listing-user">
           <img src="Images/profilepic1.jpg" alt="User Profile" class="user-img">
@@ -111,7 +98,7 @@
       <p class="listing-price">SGD 450 <span class="condition new">Brand New</span></p>
   </a>
 
-  <a href="#" class="listing">
+  <a href="listing2.html" class="listing">
       <img src="Images/gucci handbag.jpg" alt="Bag" class="listing-img">
       <div class="listing-user">
           <img src="Images/profilepic2.jpg" alt="User Profile" class="user-img">
@@ -122,7 +109,7 @@
       <p class="listing-price">SGD 1,200 <span class="condition used">Likely Used</span></p>
   </a>
 
-  <a href="#" class="listing">
+  <a href="listing3.html" class="listing">
       <img src="Images/Nespresso coffee maker.jpg" alt="Coffee Maker" class="listing-img">
       <div class="listing-user">
           <img src="Images/profilepic3.jpg" alt="User Profile" class="user-img">
@@ -133,7 +120,7 @@
       <p class="listing-price">SGD 200 <span class="condition like-new">Like New</span></p>
   </a>
 
-  <a href="#" class="listing">
+  <a href="listing4.html" class="listing">
     <img src="Images/Nespresso coffee maker.jpg" alt="Coffee Maker" class="listing-img">
     <div class="listing-user">
         <img src="Images/profilepic3.jpg" alt="User Profile" class="user-img">
@@ -182,7 +169,7 @@
     <p class="listing-price">SGD 1,200 <span class="condition used">Likely Used</span></p>
 </a>
 
-<a href="#" class="listing">
+<a href="listing3.html" class="listing">
     <img src="Images/Nespresso coffee maker.jpg" alt="Coffee Maker" class="listing-img">
     <div class="listing-user">
         <img src="Images/profilepic3.jpg" alt="User Profile" class="user-img">
@@ -193,7 +180,7 @@
     <p class="listing-price">SGD 200 <span class="condition like-new">Like New</span></p>
 </a>
 
-<a href="#" class="listing">
+<a href="listing4.html" class="listing">
   <img src="Images/Nespresso coffee maker.jpg" alt="Coffee Maker" class="listing-img">
   <div class="listing-user">
       <img src="Images/profilepic3.jpg" alt="User Profile" class="user-img">
@@ -211,10 +198,54 @@
 </div>
 
 <section id="recommended">
-  <h2>Recommended for You</h2>
-  <div class="listing-container">
-      <!-- Example Listings (You can add more dynamically) -->
-      <a href="#" class="listing">
+    <h2>Recommended for You</h2>
+    <div class="listing-container">
+        <!-- Example Listings (You can add more dynamically) -->
+        <a href="listing1.html" class="listing">
+          <img src="/Images/sony camera.jpg" alt="Camera" class="listing-img">
+          <div class="listing-user">
+              <img src="Images/profilepic1.jpg" alt="User Profile" class="user-img">
+              <span class="user-id">User123</span>
+              <span class="heart">❤️</span>
+          </div>
+          <p class="listing-name">Sony camera</p>
+          <p class="listing-price">SGD 450 <span class="condition new">Brand New</span></p>
+      </a>
+      
+      <a href="listing2.html" class="listing">
+          <img src="Images/gucci handbag.jpg" alt="Bag" class="listing-img">
+          <div class="listing-user">
+              <img src="Images/profilepic2.jpg" alt="User Profile" class="user-img">
+              <span class="user-id">Chloelee</span>
+              <span class="heart">❤️</span>
+          </div>
+          <p class="listing-name">Gucci Handbag</p>
+          <p class="listing-price">SGD 1,200 <span class="condition used">Likely Used</span></p>
+      </a>
+      
+      <a href="listing3.html" class="listing">
+          <img src="Images/Nespresso coffee maker.jpg" alt="Coffee Maker" class="listing-img">
+          <div class="listing-user">
+              <img src="Images/profilepic3.jpg" alt="User Profile" class="user-img">
+              <span class="user-id">hihiwony</span>
+              <span class="heart">❤️</span>
+          </div>
+          <p class="listing-name">Nespresso Coffee Machine</p>
+          <p class="listing-price">SGD 200 <span class="condition like-new">Like New</span></p>
+      </a>
+      
+      <a href="listing4.html" class="listing">
+        <img src="Images/Nespresso coffee maker.jpg" alt="Coffee Maker" class="listing-img">
+        <div class="listing-user">
+            <img src="Images/profilepic3.jpg" alt="User Profile" class="user-img">
+            <span class="user-id">hihiwony</span>
+            <span class="heart">❤️</span>
+        </div>
+        <p class="listing-name">Nespresso Coffee Machine</p>
+        <p class="listing-price">SGD 25 <span class="condition like-new">Like New</span></p>
+      </a>
+      <!--row 2-->
+      <a href="listing1.html" class="listing">
         <img src="/Images/sony camera.jpg" alt="Camera" class="listing-img">
         <div class="listing-user">
             <img src="Images/profilepic1.jpg" alt="User Profile" class="user-img">
@@ -225,7 +256,7 @@
         <p class="listing-price">SGD 450 <span class="condition new">Brand New</span></p>
     </a>
     
-    <a href="#" class="listing">
+    <a href="listing2.html" class="listing">
         <img src="Images/gucci handbag.jpg" alt="Bag" class="listing-img">
         <div class="listing-user">
             <img src="Images/profilepic2.jpg" alt="User Profile" class="user-img">
@@ -236,7 +267,7 @@
         <p class="listing-price">SGD 1,200 <span class="condition used">Likely Used</span></p>
     </a>
     
-    <a href="#" class="listing">
+    <a href="listing3.html" class="listing">
         <img src="Images/Nespresso coffee maker.jpg" alt="Coffee Maker" class="listing-img">
         <div class="listing-user">
             <img src="Images/profilepic3.jpg" alt="User Profile" class="user-img">
@@ -247,7 +278,7 @@
         <p class="listing-price">SGD 200 <span class="condition like-new">Like New</span></p>
     </a>
     
-    <a href="#" class="listing">
+    <a href="listing4.html" class="listing">
       <img src="Images/Nespresso coffee maker.jpg" alt="Coffee Maker" class="listing-img">
       <div class="listing-user">
           <img src="Images/profilepic3.jpg" alt="User Profile" class="user-img">
@@ -257,8 +288,7 @@
       <p class="listing-name">Nespresso Coffee Machine</p>
       <p class="listing-price">SGD 25 <span class="condition like-new">Like New</span></p>
     </a>
-    <!--row 2-->
-    <a href="#" class="listing">
+    <a href="listing1.html" class="listing">
       <img src="/Images/sony camera.jpg" alt="Camera" class="listing-img">
       <div class="listing-user">
           <img src="Images/profilepic1.jpg" alt="User Profile" class="user-img">
@@ -268,8 +298,7 @@
       <p class="listing-name">Sony camera</p>
       <p class="listing-price">SGD 450 <span class="condition new">Brand New</span></p>
   </a>
-  
-  <a href="#" class="listing">
+  <a href="listing2.html" class="listing">
       <img src="Images/gucci handbag.jpg" alt="Bag" class="listing-img">
       <div class="listing-user">
           <img src="Images/profilepic2.jpg" alt="User Profile" class="user-img">
@@ -279,8 +308,7 @@
       <p class="listing-name">Gucci Handbag</p>
       <p class="listing-price">SGD 1,200 <span class="condition used">Likely Used</span></p>
   </a>
-  
-  <a href="#" class="listing">
+  <a href="listing3.html" class="listing">
       <img src="Images/Nespresso coffee maker.jpg" alt="Coffee Maker" class="listing-img">
       <div class="listing-user">
           <img src="Images/profilepic3.jpg" alt="User Profile" class="user-img">
@@ -290,8 +318,7 @@
       <p class="listing-name">Nespresso Coffee Machine</p>
       <p class="listing-price">SGD 200 <span class="condition like-new">Like New</span></p>
   </a>
-  
-  <a href="#" class="listing">
+  <a href="listing4.html" class="listing">
     <img src="Images/Nespresso coffee maker.jpg" alt="Coffee Maker" class="listing-img">
     <div class="listing-user">
         <img src="Images/profilepic3.jpg" alt="User Profile" class="user-img">
@@ -301,7 +328,7 @@
     <p class="listing-name">Nespresso Coffee Machine</p>
     <p class="listing-price">SGD 25 <span class="condition like-new">Like New</span></p>
   </a>
-  <a href="#" class="listing">
+  <a href="listing1.html" class="listing">
     <img src="/Images/sony camera.jpg" alt="Camera" class="listing-img">
     <div class="listing-user">
         <img src="Images/profilepic1.jpg" alt="User Profile" class="user-img">
@@ -310,9 +337,8 @@
     </div>
     <p class="listing-name">Sony camera</p>
     <p class="listing-price">SGD 450 <span class="condition new">Brand New</span></p>
-</a>
-
-<a href="#" class="listing">
+  </a>
+  <a href="listing2.html" class="listing">
     <img src="Images/gucci handbag.jpg" alt="Bag" class="listing-img">
     <div class="listing-user">
         <img src="Images/profilepic2.jpg" alt="User Profile" class="user-img">
@@ -321,9 +347,8 @@
     </div>
     <p class="listing-name">Gucci Handbag</p>
     <p class="listing-price">SGD 1,200 <span class="condition used">Likely Used</span></p>
-</a>
-
-<a href="#" class="listing">
+  </a>
+  <a href="listing3.html" class="listing">
     <img src="Images/Nespresso coffee maker.jpg" alt="Coffee Maker" class="listing-img">
     <div class="listing-user">
         <img src="Images/profilepic3.jpg" alt="User Profile" class="user-img">
@@ -332,9 +357,8 @@
     </div>
     <p class="listing-name">Nespresso Coffee Machine</p>
     <p class="listing-price">SGD 200 <span class="condition like-new">Like New</span></p>
-</a>
-
-<a href="#" class="listing">
+  </a>
+  <a href="listing4.html" class="listing">
   <img src="Images/Nespresso coffee maker.jpg" alt="Coffee Maker" class="listing-img">
   <div class="listing-user">
       <img src="Images/profilepic3.jpg" alt="User Profile" class="user-img">
@@ -343,100 +367,36 @@
   </div>
   <p class="listing-name">Nespresso Coffee Machine</p>
   <p class="listing-price">SGD 25 <span class="condition like-new">Like New</span></p>
-</a>
-<a href="#" class="listing">
-  <img src="/Images/sony camera.jpg" alt="Camera" class="listing-img">
-  <div class="listing-user">
-      <img src="Images/profilepic1.jpg" alt="User Profile" class="user-img">
-      <span class="user-id">User123</span>
-      <span class="heart">❤️</span>
+  </a>
   </div>
-  <p class="listing-name">Sony camera</p>
-  <p class="listing-price">SGD 450 <span class="condition new">Brand New</span></p>
-</a>
+  <section class="viewmore">
+    <button id="viewMoreBtn">View More</button>
+  </section>
 
-<a href="#" class="listing">
-  <img src="Images/gucci handbag.jpg" alt="Bag" class="listing-img">
-  <div class="listing-user">
-      <img src="Images/profilepic2.jpg" alt="User Profile" class="user-img">
-      <span class="user-id">Chloelee</span>
-      <span class="heart">❤️</span>
-  </div>
-  <p class="listing-name">Gucci Handbag</p>
-  <p class="listing-price">SGD 1,200 <span class="condition used">Likely Used</span></p>
-</a>
-
-<a href="#" class="listing">
-  <img src="Images/Nespresso coffee maker.jpg" alt="Coffee Maker" class="listing-img">
-  <div class="listing-user">
-      <img src="Images/profilepic3.jpg" alt="User Profile" class="user-img">
-      <span class="user-id">hihiwony</span>
-      <span class="heart">❤️</span>
-  </div>
-  <p class="listing-name">Nespresso Coffee Machine</p>
-  <p class="listing-price">SGD 200 <span class="condition like-new">Like New</span></p>
-</a>
-
-<a href="#" class="listing">
-<img src="Images/Nespresso coffee maker.jpg" alt="Coffee Maker" class="listing-img">
-<div class="listing-user">
-    <img src="Images/profilepic3.jpg" alt="User Profile" class="user-img">
-    <span class="user-id">hihiwony</span>
-    <span class="heart">❤️</span>
-</div>
-<p class="listing-name">Nespresso Coffee Machine</p>
-<p class="listing-price">SGD 25 <span class="condition like-new">Like New</span></p>
-</a>
-</div>
-
-<section class="viewmore">
-  <button id="viewMoreBtn">View More</button>
-</section>
-
-
-<!--customer reviews-->
+  <!--customer reviews-->
 <section id="reviews">
-  <h2>Customer Reviews</h2>
-  <div class="review-container">
-      <div class="review-box">
-          <div class="stars">★★★★★</div>
-          <p class="review-title">Amazing quality!</p>
-          <p class="review-text">I was really impressed with the product. The build quality is great, and it exceeded my expectations!</p>
-          <p class="user-id">- User12345</p>
-      </div>
-
-      <div class="review-box">
-          <div class="stars">★★★★★</div>
-          <p class="review-title">Fast delivery</p>
-          <p class="review-text">Ordered it last week, and it arrived much earlier than expected. Super satisfied with the service!</p>
-          <p class="user-id">- Shopper99</p>
-      </div>
-
-      <div class="review-box">
-          <div class="stars">★★★★★</div>
-          <p class="review-title">Great customer support</p>
-          <p class="review-text">Had some issues initially, but customer support was very responsive and helped me out quickly.</p>
-          <p class="user-id">- HappyBuyer77</p>
-      </div>
-  </div>
-</section>
-
-<!-- Logged in user interface -->
-<!-- First Navigation Bar (Changes based on login status) -->
-<nav id="top-nav">
-  <div class="left-side">MokeSell</div>
-  <div class="right-side" id="nav-options">
-      <!-- Options will be inserted dynamically -->
-  </div>
-</nav>
-
-<!-- Second Navigation Bar (Only for logged-in users) -->
-<nav id="second-nav" class="hidden">
-  <input type="text" placeholder="Search..." class="search-bar">
-  <button id="chat-btn">💬 Chat</button>
-</nav>
-
-
+    <h2>Customer Reviews</h2>
+    <div class="review-container">
+        <div class="review-box">
+            <div class="stars">★★★★★</div>
+            <p class="review-title">Amazing quality!</p>
+            <p class="review-text">I was really impressed with the product. The build quality is great, and it exceeded my expectations!</p>
+            <p class="user-id">- User12345</p>
+        </div>
+        <div class="review-box">
+            <div class="stars">★★★★★</div>
+            <p class="review-title">Fast delivery</p>
+            <p class="review-text">Ordered it last week, and it arrived much earlier than expected. Super satisfied with the service!</p>
+            <p class="user-id">- Shopper99</p>
+        </div>
+        <div class="review-box">
+            <div class="stars">★★★★★</div>
+            <p class="review-title">Great customer support</p>
+            <p class="review-text">Had some issues initially, but customer support was very responsive and helped me out quickly.</p>
+            <p class="user-id">- HappyBuyer77</p>
+        </div>
+    </div>
+  </section>
 
 
   <script src="script.js"></script>
