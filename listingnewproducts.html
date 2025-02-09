@@ -4,62 +4,139 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>List New Product</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <a class="help-button" href="helpform.html">Help</a>
+        <nav>
+          <a href="#" id="notifs-tab" class="active">Notifications</a>
+          <select id="languageSwitcher" onchange="changeLanguage()">
+            <option value="en">English</option>
+            <option value="es">中文</option>
+            <option value="es">French</option>
+            <option value="fr">한국어</option>
+          </select>
+          <a href="account.html">My Account</a>
+        </nav>
+      </header>
+    
+      <header class="mokesell">
+        <a href="homepage(loggedin).html">
+          <img src="Images/MokeSell_Logo-removebg-preview.png" alt="Logo" class="logo">
+        </a>
+        <h1 class="MokeSell">MokeSell</h1>
+    
+     
+      <select class="categories">
+          <option value="">All Categories</option>
+          <option value="electronics">Electronics</option>
+          <option value="fashion">Fashion</option>
+          <option value="home">Home & Living</option>
+      </select>
+      <select class="currency">
+          <option value="SGD">SGD</option>
+      </select>
+      <form class="search-form">
+          <input type="text" placeholder="Search for items..." id="search-box">
+          <button type="submit">🔍</button>
+      </form>
+      <!-- Chat Button -->
+      <a href="chat.html" class="chat-button">
+        <img src="Images/1.jpg" alt="Chat Icon">
+        <span>Chat</span>
+      </a>
+      </header>
+
+      <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .form-container {
+            max-width: 500px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .form-container h2 {
+            text-align: center;
+        }
+        .form-container label {
+            display: block;
+            margin-bottom: 8px;
+        }
+        .form-container input[type="text"],
+        .form-container textarea,
+        .form-container select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .form-container input[type="file"] {
+            margin-bottom: 15px;
+        }
+        .form-container button {
+            width: 100%;
+            padding: 10px;
+            background-color: #d6ab5a;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .form-container button:hover {
+            background-color: #ca9848;
+        }
+    </style>
 </head>
 <body>
 
-    <!-- Navigation Bar -->
-    <nav class="navbar">
-        <div class="logo">MokeSell</div>
-    </nav>
+<div class="form-container">
+    <h2>List New Product</h2>
+    <form action="#" method="post" enctype="multipart/form-data">
+        <label for="photos">Add photos:</label>
+        <input type="file" id="photos" name="photos" multiple>
 
-    <div class="container">
-        <div class="list-product-section">
-            <h2>List New Product</h2>
+        <label for="title">Product title:</label>
+        <input type="text" id="title" name="title" required>
 
-            <div class="add-photo">
-                <button id="add-photo-btn">+ Add Photos</button>
-            </div>
+        <label for="description">Product description:</label>
+        <textarea id="description" name="description" rows="4" required></textarea>
 
-            <form id="product-form">
-                <label>Product Title:</label>
-                <input type="text" id="title" required>
-                <span class="error" id="title-error"></span>
+        <label for="price">Product price (S$):</label>
+        <input type="text" id="price" name="price" required>
 
-                <label>Product Description:</label>
-                <textarea id="description" required></textarea>
-                <span class="error" id="description-error"></span>
+        <label for="brand">Product brand:</label>
+        <input type="text" id="brand" name="brand">
 
-                <label>Product Price (S$):</label>
-                <input type="number" id="price" required>
-                <span class="error" id="price-error"></span>
+        <label for="category">Product category:</label>
+        <select id="category" name="category" required>
+            <option value="">Choose category</option>
+            <option value="electronics">Electronics</option>
+            <option value="clothing">Clothing</option>
+            <option value="home">Home</option>
+            <!-- Add more categories as needed -->
+        </select>
 
-                <label>Product Brand:</label>
-                <input type="text" id="brand">
+        <label for="condition">Product condition:</label>
+        <select id="condition" name="condition" required>
+            <option value="">Choose condition</option>
+            <option value="new">Brand new</option>
+            <option value="used">Like new</option>
+            <option value="refurbished">Lightly Used</option>
+            <option value="refurbished">Old</option>
+        </select>
 
-                <label>Product Category:</label>
-                <select id="category" required>
-                    <option value="">Select a category</option>
-                    <option value="luxury">Luxury</option>
-                    <option value="makeup">Makeup</option>
-                    <option value="fashion">Fashion</option>
-                </select>
-                <span class="error" id="category-error"></span>
+        <button type="submit">Submit</button>
+    </form>
+</div>
 
-                <label>Product Condition:</label>
-                <div class="condition-buttons">
-                    <button type="button" class="condition" data-value="brand-new">Brand New</button>
-                    <button type="button" class="condition" data-value="like-new">Like New</button>
-                    <button type="button" class="condition" data-value="lightly-used">Lightly Used</button>
-                    <button type="button" class="condition" data-value="old">Old</button>
-                </div>
-                <span class="error" id="condition-error"></span>
-
-                <button type="submit" class="list-product-btn">List Product</button>
-            </form>
-        </div>
-    </div>
 
     <script src="script.js"></script>
+    <script src="path/to/your/script.js"></script>
 </body>
 </html>
